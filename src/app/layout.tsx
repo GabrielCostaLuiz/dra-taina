@@ -35,14 +35,6 @@ export const metadata: Metadata = {
     description: siteConfig.seo.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: "/taina-og.jpeg",
-        width: 1200,
-        height: 630,
-        alt: siteConfig.seo.title,
-      },
-    ],
     type: "website",
     locale: "pt_BR",
   },
@@ -50,7 +42,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
-    images: ["/taina-og.jpeg"],
   },
   robots: {
     index: true,
