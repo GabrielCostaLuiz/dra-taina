@@ -1,0 +1,227 @@
+'use client'
+import Image from "next/image";
+import Link from "next/link";
+import { Mail, Phone, ArrowRight } from "lucide-react";
+import { siteConfig } from "@/constants/config";
+
+export default function Footer() {
+  return (
+    <footer className="relative bg-surface lg:pt-24 pb-2">
+      <div className="absolute -top-10 inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.04] -translate-y-2"
+          style={{ backgroundImage: `linear-gradient(to right, #6b5c4a 1px, transparent 1px), linear-gradient(to bottom, #6b5c4a 1px, transparent 1px)`, backgroundSize: '60px 60px' }}>
+        </div>
+
+
+        {/* <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+                    <div className="absolute -bottom-20 left-1/3 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]"></div> */}
+
+        {/* Floating Line Accents */}
+        <div className="absolute top-1/3 left-10 w-px h-32 bg-linear-to-b from-transparent via-primary/20 to-transparent"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-32 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent"></div>
+      </div>
+
+
+      {/* Integrated CTA Section - Original Style */}
+      <div className="max-w-7xl mx-auto px-6 md:px-16 -mb-32 relative z-20 ">
+        <div className="grid grid-cols-1 lg:grid-cols-12 overflow-visible">
+
+          {/* Left Side: Overlapping Image Card */}
+          <div className="lg:col-span-5 relative z-20 group lg:-mr-12 -mb-10 lg:mb-0">
+            <div className="aspect-4/5 rounded-3xl overflow-hidden shadow-2xl relative">
+              <Image
+                src={siteConfig.images.cta}
+                alt="Dra. Tainá Leocádio"
+                fill
+                className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+              />
+            </div>
+          </div>
+
+          {/* Right Side: Dark Content Card */}
+          <div className="lg:col-span-7 bg-primary rounded-3xl lg:rounded-lt-none lg:rounded-r-[48px] p-12 md:p-20 flex flex-col justify-center relative z-10 lg:my-12 shadow-inner">
+            <div className="max-w-lg mt-5 lg:mt-0">
+              <h2 className="font-display text-3xl md:text-4xl text-white mb-6 leading-tight">
+                Pronto para <span className="italic text-secondary-light font-light">proteger</span> o que importa?
+              </h2>
+              <p className="font-body text-base text-white/80 leading-relaxed mb-10">
+                Nosso escritório oferece <span className="text-secondary-light font-semibold">soluções estratégicas</span> em Direito de Família, Sucessões e Cível, com foco total na preservação do seu patrimônio e segurança futura.
+              </p>
+
+              <a
+                href={siteConfig.phone.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-4 text-secondary-light font-display text-2xl hover:text-white transition-all duration-300"
+              >
+                Falar com a Dra. Tainá
+                <div className="w-12 h-12 rounded-full border border-secondary-light/30 flex items-center justify-center group-hover:border-white transition-colors">
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
+
+              <div className="mt-10 pt-10 border-t border-white/10 flex items-center gap-8">
+                <p className="font-body text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">Siga-nos</p>
+                <div className="flex gap-4">
+                  <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-secondary-light hover:border-secondary-light/50 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  </a>
+                  <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-secondary-light hover:border-secondary-light/50 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main White Footer */}
+      <div className="bg-white pt-56 pb-12 relative z-10 rounded-4xl border border-surface w-[99%] mx-auto shadow">
+        <div className="max-w-7xl mx-auto px-6 md:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-24">
+
+            {/* Branding & Contact Info */}
+            <div className="lg:col-span-5">
+              <Link href="/" className="inline-block mb-10">
+                <Image
+                  src={siteConfig.images.logo}
+                  alt={siteConfig.name}
+                  width={180}
+                  height={48}
+                  className="h-20 w-auto object-contain"
+                />
+              </Link>
+
+              <div className="space-y-10">
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-2">
+                    <p className="font-body text-[11px] font-bold text-secondary uppercase tracking-[0.2em]">Atendimento</p>
+                    <p className="font-body text-sm text-on-surface-variant leading-relaxed">
+                      Atuação estratégica em São Paulo e Interior.<br />
+                      Atendimento presencial e digital.
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col gap-3 mt-2">
+                    <a href={siteConfig.phone.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
+                      <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                      </div>
+                      {siteConfig.phone.display}
+                    </a>
+                    <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
+                      <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-all">
+                        <Mail className="w-3.5 h-3.5" />
+                      </div>
+                      {siteConfig.email}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Links Columns & Maps */}
+            <div className="lg:col-span-7 space-y-12">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
+                <div className="flex flex-col gap-6">
+                  <p className="font-body text-[10px] font-bold text-primary/30 uppercase tracking-widest">Navegação</p>
+                  <div className="flex flex-col gap-4">
+                    <Link href="#services" className="text-sm text-on-surface-variant hover:text-primary transition-colors">Serviços</Link>
+                    <Link href="#about" className="text-sm text-on-surface-variant hover:text-primary transition-colors">Sobre</Link>
+                    <Link href="#process" className="text-sm text-on-surface-variant hover:text-primary transition-colors">Método</Link>
+                    <Link href="#faq" className="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</Link>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-6">
+                  <p className="font-body text-[10px] font-bold text-primary/30 uppercase tracking-widest">Social</p>
+                  <div className="flex flex-col gap-4">
+                    <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-on-surface-variant hover:text-primary transition-colors">Instagram</a>
+                    <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm text-on-surface-variant hover:text-primary transition-colors">LinkedIn</a>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-6">
+                  <p className="font-body text-[10px] font-bold text-primary/30 uppercase tracking-widest">Legal</p>
+                  <div className="flex flex-col gap-4">
+                    <p className="text-sm text-on-surface-variant/50 italic">{siteConfig.oab}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Embedded Maps Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+                <div className="space-y-3">
+                  <p className="font-body text-[9px] font-bold text-secondary uppercase tracking-widest flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Unidade São Paulo
+                  </p>
+                  <div className="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm grayscale-30 hover:grayscale-0 transition-all duration-500 h-40">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117056.12643543632!2d-46.73602146955077!3d-23.5323491410493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a407d1%3A0xaa95319a4254884c!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1715456000000!5m2!1spt-BR!2sbr" 
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Mapa Unidade São Paulo"
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <p className="font-body text-[9px] font-bold text-secondary uppercase tracking-widest flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Unidade Interior
+                  </p>
+                  <div className="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm grayscale-30 hover:grayscale-0 transition-all duration-500 h-40">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.62534579123!2d-45.894165!3d-23.189565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4bb40e4f8d2b%3A0x6b5c4a!2zU8OjbyBKb3PDqSBkb3MgQ2FtcG9zLCBTUA!5e0!3m2!1spt-BR!2sbr!4v1715456000000!5m2!1spt-BR!2sbr" 
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Mapa Unidade São José dos Campos"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-12 border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left relative">
+            <div className="flex flex-col gap-2">
+              <p className="font-body text-[10px] text-on-surface uppercase tracking-widest">
+                © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.
+              </p>
+              <p className="font-body text-[10px] text-on-surface uppercase tracking-widest">
+                Advocacia Estratégica & Especializada
+              </p>
+            </div>
+            
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="absolute -top-16 left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 w-12 h-12 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-500 shadow-sm group"
+              aria-label="Voltar para o topo"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-y-1 transition-transform"><path d="m18 15-6-6-6 6"/></svg>
+            </button>
+
+            <a 
+              href="https://gabrielcostaluiz.com.br" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-body text-[9px] text-on-surface uppercase tracking-[0.2em] hover:text-secondary transition-colors"
+            >
+              Desenvolvido por <span className="font-bold text-black">Gabriel Costa Luiz</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

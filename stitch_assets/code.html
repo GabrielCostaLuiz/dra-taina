@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Jurídico | Dra. Beatriz Prestígio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#dcc7b1",
+                        "on-surface": "#1e1b17",
+                        "secondary": "#775a19",
+                        "on-surface-variant": "#4d453e",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "inverse-on-surface": "#f7efe9",
+                        "secondary-container": "#fed488",
+                        "on-primary-fixed-variant": "#534434",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#d8c3ad",
+                        "background": "#fff8f3",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "on-error": "#ffffff",
+                        "primary": "#6b5c4a",
+                        "on-primary-container": "#625241",
+                        "inverse-surface": "#33302c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1e1b17",
+                        "tertiary-fixed": "#e4e2dd",
+                        "tertiary": "#5e5e5b",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#555552",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "outline": "#7f756d",
+                        "surface-container": "#f4ece6",
+                        "on-primary-fixed": "#241a0c",
+                        "primary-fixed-dim": "#d8c3ad",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-variant": "#e9e1db",
+                        "surface-bright": "#fff8f3",
+                        "surface-container-highest": "#e9e1db",
+                        "surface-container-high": "#efe7e0",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#6b5c4a",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "tertiary-container": "#cccac6",
+                        "primary-fixed": "#f5dfc8",
+                        "on-secondary-container": "#785a1a",
+                        "surface-dim": "#e0d9d2",
+                        "surface": "#fff8f3",
+                        "on-secondary-fixed": "#261900",
+                        "outline-variant": "#d0c5ba",
+                        "surface-container-low": "#faf2ec",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-md": ["Manrope"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px -10px rgba(107, 92, 74, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base max-w-container-max mx-auto h-20">
+<span class="font-headline-sm text-headline-sm text-primary tracking-wide">Aura Jurídico</span>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-300" href="#services">Serviços</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-300" href="#about">Sobre Nós</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-300" href="#process">Processo</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-300" href="#faq">FAQ</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md text-label-md hover:translate-y-[-2px] transition-all duration-300 shadow-sm">
+                    Agendar Consulta
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10 order-2 lg:order-1">
+<div class="flex gap-3 mb-8">
+<span class="bg-surface-container-low px-4 py-1.5 rounded-full border border-outline-variant/50 font-label-md text-label-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                            Atendimento Online
+                        </span>
+<span class="bg-surface-container-low px-4 py-1.5 rounded-full border border-outline-variant/50 font-label-md text-label-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+                            OAB/SP 123.456
+                        </span>
+</div>
+<h1 class="font-display-lg text-[40px] md:text-display-lg leading-tight mb-8 text-on-surface">
+                        Cada caso exige <span class="italic text-secondary">atenção, estratégia</span> e acompanhamento personalizado.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-lg">
+                        Atuação especializada em direito de família e questões patrimoniais com atendimento próximo e estratégico.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-secondary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md hover:translate-y-[-4px] transition-all duration-300 editorial-shadow">
+                            Falar com especialista
+                        </button>
+<button class="border border-outline px-10 py-5 rounded-full font-label-md text-label-md text-primary hover:bg-surface-container-low transition-all duration-300">
+                            Agendar consulta
+                        </button>
+</div>
+</div>
+<div class="relative order-1 lg:order-2">
+<div class="aspect-[4/5] rounded-[40px] overflow-hidden relative editorial-shadow">
+<img class="w-full h-full object-cover" data-alt="A professional and elegant portrait of a female lawyer in a modern, light-filled office. She is wearing a soft beige blazer and smiling warmly, looking directly at the camera with an air of confidence and approachability. The background consists of tall glass windows with soft natural sunlight filtering through, creating a clean, high-end editorial aesthetic with a palette of warm whites and champagne tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNlEyGRbtuVHvUDsedqq30Z6bfH3k_U-BRW8grOD-e2eq5_7cKbp3y7FPhfQ83xhZw0bgwIPMXA1c7f9IrxODwWLp5gMBvZmmNGm24z3L7fK1AxjeHhRHuHNDG-8_IWSPHQymkklzzq0wvOQ_BKpgvek91tSQJMlTq60XDsvxw922BBSmmHYSIwpSLAAgFVh7XW9dRIul7P87RdXktACiNDhyW8Vkb38m-izH_6pLNExwpq5zB7yOUHzQ8SFX0bj3urYyqUXfkvE8"/>
+</div>
+<div class="absolute -bottom-8 -left-8 glass-card p-8 rounded-2xl editorial-shadow hidden md:block">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">star</span>
+</div>
+<div>
+<p class="font-label-md text-label-md uppercase text-primary">Satisfação</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">100% Clientes</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 bg-white" id="services">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">Especialidades</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Soluções Jurídicas sob medida para seu patrimônio e família.</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                        Protegendo o que é mais importante com discrição, técnica avançada e sensibilidade humanizada.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:bg-white hover:editorial-shadow transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">family_history</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-surface">Inventários e Partilhas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Processos eficientes para a transmissão e organização do patrimônio familiar com mínima burocracia.</p>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-4 transition-all" href="#">Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:bg-white hover:editorial-shadow transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">handshake</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-surface">Separações e Divórcios</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Apoio jurídico e emocional para dissoluções consensuais ou litigiosas, focando na preservação da dignidade.</p>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-4 transition-all" href="#">Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:bg-white hover:editorial-shadow transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">child_care</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-surface">Pensão Alimentícia</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Garantia do sustento e bem-estar dos filhos com cálculos precisos baseados na necessidade e possibilidade.</p>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-4 transition-all" href="#">Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:bg-white hover:editorial-shadow transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">update</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-surface">Revisão de Alimentos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Ajuste de valores conforme mudanças na situação financeira dos envolvidos, garantindo o equilíbrio.</p>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-4 transition-all" href="#">Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<!-- Card 5 -->
+<div class="group bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:bg-white hover:editorial-shadow transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">description</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-surface">Contratos e Cobranças</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Elaboração técnica de instrumentos jurídicos e recuperação de crédito com rigor e conformidade legal.</p>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-4 transition-all" href="#">Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<!-- Card 6 -->
+<div class="group bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:bg-white hover:editorial-shadow transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">domain</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-surface">Compra e Venda de Imóveis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Segurança jurídica para suas transações imobiliárias, desde a análise de risco até o registro final.</p>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-4 transition-all" href="#">Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section><section class="py-32 bg-white" id="process-steps">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-20">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">Processo</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Como Funciona</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Step 1 -->
+<div class="relative">
+<span class="font-display-lg text-[64px] text-surface-container-highest/50 absolute -top-10 -left-4 z-0">01</span>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Contato Inicial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Atendimento humanizado via WhatsApp ou videoconferência para entender sua demanda.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<span class="font-display-lg text-[64px] text-surface-container-highest/50 absolute -top-10 -left-4 z-0">02</span>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Análise do Caso</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Estudo detalhado dos documentos e da viabilidade jurídica com transparência total.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<span class="font-display-lg text-[64px] text-surface-container-highest/50 absolute -top-10 -left-4 z-0">03</span>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Estratégia Jurídica</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Elaboração de um plano de ação personalizado, focado na preservação do seu patrimônio.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative">
+<span class="font-display-lg text-[64px] text-surface-container-highest/50 absolute -top-10 -left-4 z-0">04</span>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Acompanhamento</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Suporte contínuo e atualizações constantes até a resolução definitiva do caso.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 bg-surface-container-low" id="about">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="aspect-[3/4] rounded-[60px] overflow-hidden editorial-shadow">
+<img class="w-full h-full object-cover" data-alt="A lifestyle photography shot of a professional woman in a serene office setting. She is sitting in a minimalist ivory chair, holding a fountain pen, and looking thoughtfully towards a window. The room is decorated with warm wooden accents and fresh white flowers. The lighting is soft and golden, emphasizing a high-end lifestyle editorial mood with colors of champagne, nude, and soft gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-rqLzTLnKQ8jcIkCkQLozlXbs8XHWGAapyzRy77JycIa5PsKK1tDpdc91RiHiOetSrsV3W4UEmsW03Azs1a4qhfMJTRF6cbriamNSPF6acS2ONRPdi8PxNTUDHq9lJXe40eNzM-JLOIvM9m9sh7-KwTIZpfTd6Gtg4hn0PR22g5TknFt7r1y6OoQk8h1MhnWzawbG70fmZtC0WtLS8qPqmnyC_oB4-51HECk1LSJ1Ac_tQudMalZ-1wrnD6Pn368SC0dQ_kV-pi0"/>
+</div>
+<div class="absolute top-1/2 -right-12 translate-y-[-50%] hidden xl:block">
+<div class="glass-card p-12 rounded-[40px] editorial-shadow space-y-8">
+<div>
+<p class="text-[56px] font-headline-lg text-secondary leading-none">12+</p>
+<p class="font-label-md text-label-md text-primary uppercase">Anos de Prática</p>
+</div>
+<div class="w-20 h-px bg-outline-variant"></div>
+<div>
+<p class="text-[56px] font-headline-lg text-secondary leading-none">500+</p>
+<p class="font-label-md text-label-md text-primary uppercase">Casos Resolvidos</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-6 block">Sobre a Dra. Beatriz Prestígio</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Estratégia aliada à sensibilidade humana.</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg">
+<p>Acredito que o Direito de Família não se trata apenas de leis, mas de pessoas e seus futuros. Cada processo é conduzido com o máximo rigor técnico e uma escuta empática para entender as nuances de cada história.</p>
+<p>Graduada pela USP com especialização em Direito Patrimonial, meu compromisso é oferecer um porto seguro para meus clientes em momentos de transição, garantindo que seus direitos sejam preservados com elegância e eficiência.</p>
+</div>
+<div class="mt-12 flex gap-8">
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Pós-Graduada</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Direito Civil &amp; Família</p>
+</div>
+<div class="w-px h-12 bg-outline-variant"></div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Especialista</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestão Patrimonial</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 bg-surface" id="testimonials">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-20">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">Depoimentos</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Confiança e Resultados</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:editorial-shadow transition-all duration-500">
+<div class="flex gap-1 mb-6 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic mb-8">
+          "A Dra. Beatriz conduziu meu processo de inventário com uma serenidade e competência técnica admiráveis. Em um momento tão difícil, ter esse apoio humano fez toda a diferença."
+        </p>
+<div>
+<p class="font-headline-sm text-[20px] text-on-surface">Mariana S. Albuquerque</p>
+<p class="font-label-md text-label-md text-primary uppercase mt-1">Arquiteta</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:editorial-shadow transition-all duration-500">
+<div class="flex gap-1 mb-6 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic mb-8">
+          "Estratégia impecável na gestão patrimonial da nossa família. O atendimento é extremamente personalizado e discreto, exatamente o que buscávamos para nossas questões."
+        </p>
+<div>
+<p class="font-headline-sm text-[20px] text-on-surface">Ricardo Menezes</p>
+<p class="font-label-md text-label-md text-primary uppercase mt-1">Empresário</p>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:editorial-shadow transition-all duration-500">
+<div class="flex gap-1 mb-6 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic mb-8">
+          "O divórcio consensual foi resolvido de forma muito rápida e elegante. A sensibilidade da Dra. Beatriz em preservar o bem-estar dos nossos filhos foi o ponto alto do serviço."
+        </p>
+<div>
+<p class="font-headline-sm text-[20px] text-on-surface">Juliana P. Costa</p>
+<p class="font-label-md text-label-md text-primary uppercase mt-1">Médica</p>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-32 bg-white" id="faq">
+<div class="max-w-3xl mx-auto px-margin-mobile">
+<div class="text-center mb-20">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">Dúvidas Frequentes</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Transparência em cada etapa.</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-low rounded-2xl border border-outline-variant/30 overflow-hidden" open="">
+<summary class="flex justify-between items-center p-8 cursor-pointer list-none font-headline-sm text-[20px] text-on-surface">
+                            Como funciona o atendimento online?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-8 pb-8 font-body-md text-on-surface-variant">
+                            Nosso atendimento online é realizado via videoconferência segura, garantindo total sigilo e comodidade. Você pode ser atendido de qualquer lugar do mundo com a mesma qualidade de uma consulta presencial.
+                        </div>
+</details>
+<details class="group bg-surface-container-low rounded-2xl border border-outline-variant/30 overflow-hidden">
+<summary class="flex justify-between items-center p-8 cursor-pointer list-none font-headline-sm text-[20px] text-on-surface">
+                            Qual o tempo médio de um processo de inventário?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-8 pb-8 font-body-md text-on-surface-variant">
+                            O tempo varia significativamente entre inventários consensuais (extrajudiciais), que podem levar 2 a 4 meses, e inventários judiciais litigiosos, que podem se estender por anos. Nossa meta é sempre a agilidade estratégica.
+                        </div>
+</details>
+<details class="group bg-surface-container-low rounded-2xl border border-outline-variant/30 overflow-hidden">
+<summary class="flex justify-between items-center p-8 cursor-pointer list-none font-headline-sm text-[20px] text-on-surface">
+                            Quais documentos são necessários para o divórcio?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-8 pb-8 font-body-md text-on-surface-variant">
+                            Geralmente são necessários: certidão de casamento, documentos pessoais dos cônjuges e filhos, além da relação de bens móveis e imóveis. Na consulta inicial, fornecemos um checklist detalhado.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-24 px-margin-mobile">
+<div class="max-w-container-max mx-auto bg-primary rounded-[48px] p-12 md:p-24 text-center relative overflow-hidden">
+<!-- Abstract decorative element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-container/10 blur-[120px] rounded-full"></div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-[32px] md:text-headline-lg text-on-primary mb-8 max-w-3xl mx-auto">Seu caso merece acompanhamento estratégico e atenção personalizada.</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 mb-12 max-w-xl mx-auto">
+                        Inicie hoje uma conversa para proteger seus direitos e sua família com quem entende do assunto.
+                    </p>
+<div class="flex justify-center">
+<button class="bg-secondary text-on-primary px-12 py-5 rounded-full font-label-md text-label-md hover:scale-105 transition-all duration-300 editorial-shadow flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+                            Falar pelo WhatsApp
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-headline-sm text-headline-sm text-primary tracking-wide">Aura Jurídico</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs text-center md:text-left">
+                    Escritório boutique especializado em Direito de Família e Patrimonial.
+                </p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-all duration-200" href="#">Privacidade</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-all duration-200" href="#">Termos de Uso</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-all duration-200" href="#">OAB SP</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-all duration-200" href="#">Contato</a>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">© 2024 Aura Jurídico. Todos os direitos reservados.</p>
+</div>
+</footer>
+</body></html>
