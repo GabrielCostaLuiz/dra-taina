@@ -6,7 +6,7 @@ import { siteConfig } from "@/constants/config";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-surface lg:pt-24 pb-2">
+    <footer className="relative bg-surface lg:pt-24 lg:pb-2">
       <div className="absolute -top-10 inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.04] -translate-y-2"
@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Left Side: Overlapping Image Card */}
           <div className="lg:col-span-5 relative z-20 group lg:-mr-12 -mb-10 lg:mb-0">
-            <div className="aspect-4/5 rounded-3xl overflow-hidden shadow-2xl relative">
+            <div className="aspect-7/12 rounded-3xl overflow-hidden shadow-2xl relative">
               <Image
                 src={siteConfig.images.cta}
                 alt="Dra. Tainá Leocádio"
@@ -39,51 +39,89 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right Side: Dark Content Card */}
-          <div className="lg:col-span-7 bg-primary rounded-3xl lg:rounded-lt-none lg:rounded-r-[48px] p-12 md:p-20 flex flex-col justify-center relative z-10 lg:my-12 shadow-inner">
-            <div className="max-w-lg mt-5 lg:mt-0">
-              <h2 className="font-display text-3xl md:text-4xl text-white mb-6 leading-tight">
-                Pronto para <span className="italic text-secondary-light font-light">proteger</span> o que importa?
+          {/* Right Side: Light Content Card */}
+        <div className="lg:col-span-7 bg-[#f5ebe0] rounded-3xl lg:rounded-lt-none lg:rounded-r-[48px] p-12 md:p-16 lg:pl-24 flex flex-col justify-center relative z-10 lg:my-12 shadow-inner overflow-hidden">
+          {/* Subtle Background Pattern for the card */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -mr-20 -mt-20 blur-3xl pointer-events-none"></div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10 max-lg:mt-5">
+            <div className="lg:col-span-7">
+              <h2 className="font-display text-4xl md:text-5xl text-on-surface mb-6 leading-tight">
+                Pronto para <span className="italic text-secondary font-light relative">
+                  proteger
+                  <svg className="absolute -bottom-2 left-0 w-full h-2 text-secondary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </span> o que importa?
               </h2>
-              <p className="font-body text-base text-white/80 leading-relaxed mb-10">
-                Nosso escritório oferece <span className="text-secondary-light font-semibold">soluções estratégicas</span> em Direito de Família, Sucessões e Cível, com foco total na preservação do seu patrimônio e segurança futura.
+              <p className="font-body text-base text-on-surface-variant leading-relaxed max-w-md">
+                Nosso escritório oferece <span className="text-secondary font-semibold">soluções estratégicas</span> em Direito de Família, Sucessões e Cível, com foco total na preservação do seu patrimônio e segurança futura.
               </p>
+            </div>
 
-              <a
-                href={siteConfig.phone.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-4 text-secondary-light font-display text-2xl hover:text-white transition-all duration-300"
-              >
-                Falar com a Dra. Tainá
-                <div className="w-12 h-12 rounded-full border border-secondary-light/30 flex items-center justify-center group-hover:border-white transition-colors">
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </a>
-
-              <div className="mt-10 pt-10 border-t border-white/10 flex items-center gap-8">
-                <p className="font-body text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">Siga-nos</p>
-                <div className="flex gap-4">
-                  <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-secondary-light hover:border-secondary-light/50 transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                  </a>
-                  <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-secondary-light hover:border-secondary-light/50 transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                  </a>
-                </div>
-              </div>
+            {/* Right side differentials to fill space */}
+            <div className="lg:col-span-5 border-l border-on-surface/10 lg:pl-10 hidden lg:block">
+              <p className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-6">Excelência Jurídica</p>
+              <ul className="space-y-6">
+                {[
+                  { title: "Atendimento Personalizado", desc: "Foco total na sua história" },
+                  { title: "Estratégia Preventiva", desc: "Antecipando conflitos" },
+                  { title: "Sigilo & Ética", desc: "Segurança absoluta" }
+                ].map((item, i) => (
+                  <li key={i} className="flex flex-col gap-1">
+                    <span className="font-display text-base text-on-surface leading-none font-medium">{item.title}</span>
+                    <span className="font-body text-[11px] text-on-surface-variant/70 uppercase tracking-wider">{item.desc}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+
+          {/* Call to Action - Now below the grid for more impact */}
+          <div className="mt-12 relative z-10">
+            <a
+              href={siteConfig.phone.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-4 text-on-surface hover:text-secondary transition-all duration-500"
+            >
+              <span className="font-display text-xl md:text-3xl transition-colors">Falar com a Dra. Tainá</span>
+              <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary group-hover:text-white transition-all duration-500 shadow-sm">
+                <ArrowRight className="w-6 h-6" />
+              </div>
+            </a>
+          </div>
+
+          {/* Social and availability footer for the card */}
+          <div className="mt-16 pt-8 border-t border-on-surface/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
+            <div className="flex items-center gap-6">
+              <span className="font-body text-[10px] font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Siga-nos</span>
+              <div className="flex gap-4">
+                <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface-variant hover:bg-secondary hover:border-secondary hover:text-white transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface-variant hover:bg-secondary hover:border-secondary hover:text-white transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+              </div>
+            </div>
+            
+            <div className="hidden lg:flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              <span className="font-body text-[10px] font-medium text-on-surface-variant/60 uppercase tracking-widest">Disponível para consultoria</span>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
 
       {/* Main White Footer */}
-      <div className="bg-white pt-56 pb-12 relative z-10 rounded-4xl border border-surface w-[99%] mx-auto shadow">
+      <div className="bg-white pt-56 pb-12 relative z-10 rounded-4xl border border-surface lg:w-[99%] mx-auto shadow">
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-24">
 
             {/* Branding & Contact Info */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 flex flex-col items-center text-center lg:items-start lg:text-left">
               <Link href="/" className="inline-block mb-10">
                 <Image
                   src={siteConfig.images.logo}
@@ -105,13 +143,13 @@ export default function Footer() {
                   </div>
                   
                   <div className="flex flex-col gap-3 mt-2">
-                    <a href={siteConfig.phone.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
+                    <a href={siteConfig.phone.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center lg:justify-start gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
                       <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-all">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                       </div>
                       {siteConfig.phone.display}
                     </a>
-                    <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
+                    <a href={`mailto:${siteConfig.email}`} className="flex items-center justify-center lg:justify-start gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
                       <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-all">
                         <Mail className="w-3.5 h-3.5" />
                       </div>

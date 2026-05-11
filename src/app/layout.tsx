@@ -3,6 +3,8 @@ import { Playfair_Display, Manrope } from "next/font/google";
 import "./globals.css";
 
 import { siteConfig } from "@/constants/config";
+import Schema from "@/components/seo/Schema";
+import WhatsAppFloating from "@/components/ui/WhatsAppFloating";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -15,15 +17,44 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.seo.title,
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.seo.title,
+    template: `%s | ${siteConfig.name}`,
+  },
   description: siteConfig.seo.description,
   keywords: siteConfig.seo.keywords,
   authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/taina-og.jpeg",
+        width: 1200,
+        height: 630,
+        alt: siteConfig.seo.title,
+      },
+    ],
     type: "website",
     locale: "pt_BR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    images: ["/taina-og.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -37,7 +68,11 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${playfair.variable} ${manrope.variable} scroll-smooth antialiased`}
     >
-      <body className="font-body">{children}</body>
+      <body className="font-body">
+        <Schema />
+        {children}
+        <WhatsAppFloating />
+      </body>
     </html>
   );
 }

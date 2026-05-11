@@ -38,6 +38,8 @@ export function NavbarMobile() {
 }
 
 export function NavbarDesktop() {
+  /* 
+  // Comentado conforme solicitado pelo usuário: Desativando header flutuante no scroll up
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -68,6 +70,7 @@ export function NavbarDesktop() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+  */
 
   return (
     <>
@@ -104,7 +107,7 @@ export function NavbarDesktop() {
         </div>
       </nav>
 
-      {/* 2. Menu Flutuante (Aparece ao subir o scroll após o Hero) */}
+      {/* 2. Menu Flutuante (Comentado por enquanto)
       <nav
         className={`fixed top-0 w-full z-40 transition-all duration-700 ease-in-out ${
           isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
@@ -151,6 +154,7 @@ export function NavbarDesktop() {
           </div>
         </div>
       </nav>
+      */}
     </>
   );
 }

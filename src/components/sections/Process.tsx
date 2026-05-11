@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/constants/config";
 import SectionHeader from "../ui/SectionHeader";
 
-
 const steps = [
   {
     number: "01",
@@ -28,13 +27,80 @@ const steps = [
 
 export default function Process() {
   return (
-    <Section id="process" variant="primary" showGrid gradient="both">
-      <div className="max-w-7xl mx-auto px-6 md:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+    <>
+      {/* Mobile Version */}
+      <div className="lg:hidden">
+        <ProcessMobile />
+      </div>
 
-          {/* Left Column: Fixed Content */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <SectionHeader 
+      {/* Desktop Version */}
+      <div className="hidden lg:block">
+        <ProcessDesktop />
+      </div>
+    </>
+  );
+}
+
+function ProcessMobile() {
+  return (
+    <Section id="process-mobile" variant="primary" showGrid gradient="both">
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionHeader
+          eyebrow="Nosso Método"
+          title={<>Como conduzimos <br /><span className="italic text-secondary font-light">seu caso</span> com <br />excelência.</>}
+          description="Um processo jurídico claro, eficiente e transparente, desenhado para oferecer segurança e tranquilidade em cada passo da jornada."
+          center={true}
+          className="mb-12"
+        />
+
+        <div className="space-y-12 mb-16">
+          {steps.map((step, index) => (
+            <div key={index} className="flex flex-col gap-6">
+              <div className="flex items-baseline gap-4">
+                <span className="font-display text-2xl text-secondary font-medium">{step.number}</span>
+                <h3 className="font-display text-2xl text-on-surface">{step.title}</h3>
+              </div>
+
+              <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl">
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <p className="font-body text-on-surface-variant leading-relaxed text-base">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-center">
+          <a
+            href={siteConfig.phone.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-secondary text-white px-10 py-5 rounded-full font-body text-base font-bold active:scale-95 transition-all shadow-xl"
+          >
+            Iniciar minha jornada
+            <ArrowRight className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function ProcessDesktop() {
+  return (
+    <Section id="process" variant="primary" showGrid gradient="both">
+      <div className="max-w-7xl mx-auto px-16">
+        <div className="grid grid-cols-12 gap-16 items-start">
+          {/* Left Column: Sticky Content */}
+          <div className="col-span-5 sticky top-32 self-start">
+            <SectionHeader
               eyebrow="Nosso Método"
               title={<>Como conduzimos <br /><span className="italic text-secondary font-light">seu caso</span> com <br />excelência.</>}
               description="Um processo jurídico claro, eficiente e transparente, desenhado para oferecer segurança e tranquilidade em cada passo da jornada."
@@ -53,20 +119,20 @@ export default function Process() {
             </a>
           </div>
 
-          {/* Right Column: Staggered Cards */}
-          <div className="lg:col-span-7 space-y-16 lg:space-y-24 lg:pt-12">
+          {/* Right Column: Scrolling Steps */}
+          <div className="col-span-7 space-y-32 pt-12">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`flex flex-col gap-6 max-w-md ${index % 2 !== 0 ? "lg:ml-auto" : "lg:mr-auto"
+                className={`flex flex-col gap-8 max-w-md ${index % 2 !== 0 ? "ml-auto" : "mr-auto"
                   }`}
               >
                 <div className="flex items-baseline gap-4 mb-2">
                   <span className="font-display text-2xl text-secondary font-medium">{step.number}</span>
-                  <h3 className="font-display text-3xl text-on-surface">{step.title}</h3>
+                  <h3 className="font-display text-4xl text-on-surface leading-tight">{step.title}</h3>
                 </div>
 
-                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl group">
+                <div className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl group">
                   <Image
                     src={step.image}
                     alt={step.title}
@@ -76,13 +142,12 @@ export default function Process() {
                   <div className="absolute inset-0 bg-linear-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
 
-                <p className="font-body text-on-surface-variant leading-relaxed">
+                <p className="font-body text-on-surface-variant text-lg leading-relaxed">
                   {step.description}
                 </p>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </Section>

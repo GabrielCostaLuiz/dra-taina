@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Section from "../layout/Section";
 import SectionHeader from "../ui/SectionHeader";
+import { UserCheck, ShieldCheck, Gavel, Eye } from "lucide-react";
 
 export default function CaseUnique() {
   return (
@@ -41,11 +42,18 @@ export default function CaseUnique() {
               </p>
             </div>
             
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-              {["Atendimento Exclusivo", "Sigilo Absoluto", "Rigor Técnico", "Transparência Total"].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-on-surface font-body font-medium">
-                  <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-                  {item}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mb-12">
+              {[
+                { label: "Atendimento Exclusivo", icon: UserCheck },
+                { label: "Sigilo Absoluto", icon: ShieldCheck },
+                { label: "Rigor Técnico", icon: Gavel },
+                { label: "Transparência Total", icon: Eye },
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-on-surface font-body font-medium group">
+                  <div className="w-10 h-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                    <item.icon className="w-5 h-5" />
+                  </div>
+                  <span className="text-sm uppercase tracking-wider">{item.label}</span>
                 </li>
               ))}
             </ul>

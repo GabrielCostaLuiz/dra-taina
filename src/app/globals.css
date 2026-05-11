@@ -53,17 +53,27 @@
 }
 
 html {
-  overflow-x: hidden !important;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  overflow-x: hidden !important;
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+@keyframes slow-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-slow-ping {
+  animation: slow-ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
 }

@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Tainá Leocádio",
   fullName: "Dra. Tainá Leocádio",
+  url: "https://dratainaleocadio.com.br",
   role: "Advocacia Especializada",
   oab: "OAB/SP 474.941",
   experience: "3+",
@@ -23,8 +24,8 @@ export const siteConfig = {
   },
   seo: {
     title: "Tainá Leocádio | Advocacia Especializada",
-    description: "Advogada especializada em Direito Civil, Família, Sucessões e Imobiliário. Atendimento estratégico e humanizado para proteger seu patrimônio e sua família.",
-    keywords: ["advogada", "direito de família", "sucessões", "direito imobiliário", "direito civil", "Tainá Leocádio", "inventário", "divórcio"],
+    description: "Advogada especializada em Cível, Família, Sucessões e Imobiliário. Atendimento estratégico e humanizado para proteger seu patrimônio e sua família.",
+    keywords: ["advogada", "direito de família", "sucessões", "direito imobiliário", "cível", "Tainá Leocádio", "inventário", "divórcio"],
   },
   specialties: [
     {
@@ -40,8 +41,8 @@ export const siteConfig = {
       description: "Segurança jurídica em transações, contratos, regularização de imóveis e questões possessórias.",
     },
     {
-      title: "Direito Civil",
-      description: "Consultoria e contencioso em contratos, responsabilidade civil e obrigações.",
+      title: "Cível",
+      description: "Consultoria e contencioso em contratos, responsabilidade cível e obrigações.",
     },
   ],
 };

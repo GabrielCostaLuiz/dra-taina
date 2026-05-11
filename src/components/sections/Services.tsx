@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { 
-  Users, 
-  Handshake, 
-  Baby, 
-  History, 
-  FileText, 
+import {
+  Users,
+  Handshake,
+  Baby,
+  History,
+  FileText,
   Home,
   ShieldCheck,
   Scale,
@@ -64,14 +64,14 @@ const servicePillars = [
     ]
   },
   {
-    id: "civil",
-    title: "Civil",
-    fullName: "Direito Civil",
+    id: "cível",
+    title: "Cível",
+    fullName: "Cível",
     icon: FileText,
     image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070",
-    whatsappMessage: "Olá Dra. Tainá, gostaria de agendar uma consulta sobre Direito Civil.",
+    whatsappMessage: "Olá Dra. Tainá, gostaria de agendar uma consulta sobre Cível.",
     items: [
-      { title: "Responsabilidade Civil", description: "Defesa e pleitos indenizatórios em casos de danos morais e materiais complexos.", icon: ShieldCheck },
+      { title: "Responsabilidade Cível", description: "Defesa e pleitos indenizatórios em casos de danos morais e materiais complexos.", icon: ShieldCheck },
       { title: "Gestão Contratual", description: "Consultoria preventiva para elaboração de instrumentos que blindam as relações de negócio.", icon: FileText },
       { title: "Direito do Consumidor", description: "Atuação em litígios contra grandes corporações para reparação de vícios e abusos.", icon: Users },
       { title: "Recuperação de Ativos", description: "Execução estratégica de títulos e cobrança especializada para reaver créditos pendentes.", icon: Scale }
@@ -85,8 +85,8 @@ export default function Services() {
   return (
     <Section id="services" gradient="both">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
-        
-        <SectionHeader 
+
+        <SectionHeader
           eyebrow="Nossas Especialidades"
           title={<>Estratégia Jurídica de <br /><span className="italic text-secondary font-light">Alto Padrão</span></>}
           description="Soluções personalizadas em quatro pilares fundamentais do direito contemporâneo."
@@ -99,17 +99,16 @@ export default function Services() {
               <button
                 key={pillar.id}
                 onClick={() => setActivePillar(pillar)}
-                className={`px-10 py-4 rounded-full font-body text-sm font-bold transition-all duration-500 border ${
-                  activePillar.id === pillar.id
-                    ? "bg-primary text-white border-primary shadow-xl scale-105"
-                    : "bg-white text-on-surface-variant border-outline-variant/30 hover:border-secondary/50"
-                }`}
+                className={`px-10 py-4 rounded-full font-body text-sm font-bold transition-all duration-500 border ${activePillar.id === pillar.id
+                  ? "bg-primary text-white border-primary shadow-xl scale-105"
+                  : "bg-white text-on-surface-variant border-outline-variant/30 hover:border-secondary/50"
+                  }`}
               >
                 {pillar.title}
               </button>
             ))}
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             <div className="lg:col-span-4 space-y-16">
               {activePillar.items.slice(0, 2).map((item, index) => (
@@ -132,13 +131,13 @@ export default function Services() {
 
             <div className="lg:col-span-4 flex justify-center relative py-12 perspective-1000">
               <div className="relative w-80 h-80 bg-white rounded-full shadow-2xl flex flex-col items-center justify-center p-0 text-center border-4 border-surface-container-high transition-all duration-700 overflow-hidden group hover:scale-105">
-                
+
                 {/* Background Image - Always visible but dimmed */}
                 <div className="absolute inset-0 transition-all duration-700 transform group-hover:scale-110">
-                  <Image 
-                    src={activePillar.image} 
-                    alt={activePillar.fullName} 
-                    fill 
+                  <Image
+                    src={activePillar.image}
+                    alt={`Serviço de ${activePillar.fullName} - ${siteConfig.fullName}`}
+                    fill
                     className="object-cover opacity-20 grayscale-50 transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   />
                   {/* Subtle overlay that fades out */}
@@ -153,7 +152,7 @@ export default function Services() {
                   <h4 className="font-display text-2xl text-on-surface mb-2">{activePillar.fullName}</h4>
                   <div className="w-20 h-1 bg-secondary mx-auto"></div>
                 </div>
-                
+
                 {/* Decorative Rings */}
                 <div className="absolute inset-0 border border-secondary/10 rounded-full scale-110 pointer-events-none transition-all duration-700 group-hover:scale-150 group-hover:opacity-0"></div>
                 <div className="absolute inset-0 border border-secondary/5 border-dashed rounded-full scale-125 animate-spin-slow pointer-events-none transition-all duration-700 group-hover:scale-150 group-hover:opacity-0"></div>
@@ -181,8 +180,8 @@ export default function Services() {
           </div>
 
           <div className="mt-24 text-center">
-            <a 
-              href={`https://wa.me/5511940044592?text=${encodeURIComponent(activePillar.whatsappMessage)}`} 
+            <a
+              href={`https://wa.me/5511940044592?text=${encodeURIComponent(activePillar.whatsappMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 text-secondary font-display text-xl hover:text-primary transition-all max-w-full px-4"
@@ -196,20 +195,18 @@ export default function Services() {
         {/* Mobile View: Vertical Accordion Layout */}
         <div className="lg:hidden space-y-6">
           {servicePillars.map((pillar) => (
-            <div 
-              key={pillar.id} 
-              className={`bg-white rounded-3xl border transition-all duration-500 overflow-hidden ${
-                activePillar.id === pillar.id ? "border-secondary/30 shadow-xl" : "border-outline-variant/20"
-              }`}
+            <div
+              key={pillar.id}
+              className={`bg-white rounded-3xl border transition-all duration-500 overflow-hidden ${activePillar.id === pillar.id ? "border-secondary/30 shadow-xl" : "border-outline-variant/20"
+                }`}
             >
               <button
                 onClick={() => setActivePillar(activePillar.id === pillar.id && pillar.id !== servicePillars[0].id ? servicePillars[0] : pillar)}
                 className="w-full flex items-center justify-between p-6 text-left"
               >
                 <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${
-                    activePillar.id === pillar.id ? "bg-primary text-white" : "bg-surface-container text-secondary"
-                  }`}>
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${activePillar.id === pillar.id ? "bg-primary text-white" : "bg-surface-container text-secondary"
+                    }`}>
                     <pillar.icon className="w-6 h-6" />
                   </div>
                   <span className={`font-display text-xl ${activePillar.id === pillar.id ? "text-primary" : "text-on-surface"}`}>
@@ -221,9 +218,8 @@ export default function Services() {
                 </div>
               </button>
 
-              <div className={`transition-all duration-700 ease-in-out ${
-                activePillar.id === pillar.id ? "max-h-[1200px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
-              }`}>
+              <div className={`transition-all duration-700 ease-in-out ${activePillar.id === pillar.id ? "max-h-[1200px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+                }`}>
                 <div className="px-6 pb-8 space-y-10 border-t border-outline-variant/10 pt-8">
                   {pillar.items.map((item, idx) => (
                     <div key={idx} className="space-y-3">
@@ -236,10 +232,10 @@ export default function Services() {
                       </p>
                     </div>
                   ))}
-                  
+
                   <div className="pt-4">
-                    <a 
-                      href={`https://wa.me/5511940044592?text=${encodeURIComponent(pillar.whatsappMessage)}`} 
+                    <a
+                      href={`https://wa.me/5511940044592?text=${encodeURIComponent(pillar.whatsappMessage)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-3 bg-primary text-white py-4 px-6 rounded-2xl font-body font-bold text-sm"

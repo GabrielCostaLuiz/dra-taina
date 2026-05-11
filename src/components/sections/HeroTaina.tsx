@@ -28,7 +28,7 @@ export function HeroTainaMobile() {
         <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-2xl">
           <Image
             src={siteConfig.images.hero}
-            alt={siteConfig.name}
+            alt={`${siteConfig.fullName} - Advocacia Especializada em Cível, Família e Sucessões`}
             fill
             className="object-cover object-top"
             priority
@@ -195,7 +195,7 @@ export function HeroTainaDesktop() {
           <div className="absolute inset-0 z-0">
             <Image
               src={siteConfig.images.hero}
-              alt={siteConfig.name}
+              alt={`${siteConfig.fullName} - Advogada Especialista em São Paulo`}
               fill
               className="object-cover rounded-l-[10rem] lg:rounded-l-[20rem] shadow-[-20px_0_50px_rgba(0,0,0,0.05)]"
               priority
@@ -247,7 +247,7 @@ export function HeroTainaDesktop() {
               {siteConfig.name}
             </p>
             <p className="font-body text-[11px] text-on-surface-variant tracking-wide mb-4">
-              Direito Civil · Família · Sucessões
+              Cível · Família · Sucessões
             </p>
             <div className="border-t border-outline-variant/10 pt-4 flex items-center gap-2.5">
               <div className="w-7 h-7 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">

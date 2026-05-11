@@ -2,6 +2,7 @@ import Image from "next/image";
 import { siteConfig } from "@/constants/config";
 import Section from "../layout/Section";
 import SectionHeader from "../ui/SectionHeader";
+import { MapPin, ArrowUpRight } from "lucide-react";
 
 export default function About() {
   return (
@@ -77,12 +78,12 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="group/link font-body text-[10px] uppercase tracking-[0.2em] text-on-surface-variant flex items-center gap-3 hover:text-primary transition-all duration-300 w-fit"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  <MapPin className="w-3.5 h-3.5 text-secondary" />
                   <span className="relative">
                     Leocádio Advocacia · São Paulo
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full"></span>
                   </span>
-                  <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300 ml-1 text-primary">→</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300 ml-1 text-primary" />
                 </a>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Advocacia+São+José+dos+Campos+SP"
@@ -90,12 +91,12 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="group/link font-body text-[10px] uppercase tracking-[0.2em] text-on-surface-variant flex items-center gap-3 hover:text-primary transition-all duration-300 w-fit"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  <MapPin className="w-3.5 h-3.5 text-secondary" />
                   <span className="relative">
                     Unidade Interior · São José dos Campos
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full"></span>
                   </span>
-                  <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300 ml-1 text-primary">→</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300 ml-1 text-primary" />
                 </a>
               </div>
             </div>
