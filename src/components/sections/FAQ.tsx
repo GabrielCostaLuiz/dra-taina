@@ -22,7 +22,7 @@ export default function FAQ() {
   return (
     <Section id="faq" variant="primary" gradient="bottom" showGrid>
       <div className="max-w-6xl mx-auto px-6">
-        <SectionHeader 
+        <SectionHeader
           eyebrow="Dúvidas Frequentes"
           title={<>Esclarecendo suas <br /><span className="italic text-secondary font-light">Principais Dúvidas</span></>}
           description="Transparência é um dos nossos pilares. Abaixo, respondemos as questões mais comuns trazidas pelos nossos clientes para garantir total clareza em cada etapa do processo."

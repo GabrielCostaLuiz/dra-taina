@@ -40,78 +40,78 @@ export default function Footer() {
           </div>
 
           {/* Right Side: Light Content Card */}
-        <div className="lg:col-span-7 bg-[#f5ebe0] rounded-3xl lg:rounded-lt-none lg:rounded-r-[48px] p-12 md:p-16 lg:pl-24 flex flex-col justify-center relative z-10 lg:my-12 shadow-inner overflow-hidden">
-          {/* Subtle Background Pattern for the card */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -mr-20 -mt-20 blur-3xl pointer-events-none"></div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10 max-lg:mt-5">
-            <div className="lg:col-span-7">
-              <h2 className="font-display text-4xl md:text-5xl text-on-surface mb-6 leading-tight">
-                Pronto para <span className="italic text-secondary font-light relative">
-                  proteger
-                  <svg className="absolute -bottom-2 left-0 w-full h-2 text-secondary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                </span> o que importa?
-              </h2>
-              <p className="font-body text-base text-on-surface-variant leading-relaxed max-w-md">
-                Nosso escritório oferece <span className="text-secondary font-semibold">soluções estratégicas</span> em Direito de Família, Sucessões e Cível, com foco total na preservação do seu patrimônio e segurança futura.
-              </p>
-            </div>
+          <div className="lg:col-span-7 bg-[#f5ebe0] rounded-3xl lg:rounded-lt-none lg:rounded-r-[48px] p-12 md:p-16 lg:pl-24 flex flex-col justify-center relative z-10 lg:my-12 shadow-inner overflow-hidden">
+            {/* Subtle Background Pattern for the card */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -mr-20 -mt-20 blur-3xl pointer-events-none"></div>
 
-            {/* Right side differentials to fill space */}
-            <div className="lg:col-span-5 border-l border-on-surface/10 lg:pl-10 hidden lg:block">
-              <p className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-6">Excelência Jurídica</p>
-              <ul className="space-y-6">
-                {[
-                  { title: "Atendimento Personalizado", desc: "Foco total na sua história" },
-                  { title: "Estratégia Preventiva", desc: "Antecipando conflitos" },
-                  { title: "Sigilo & Ética", desc: "Segurança absoluta" }
-                ].map((item, i) => (
-                  <li key={i} className="flex flex-col gap-1">
-                    <span className="font-display text-base text-on-surface leading-none font-medium">{item.title}</span>
-                    <span className="font-body text-[11px] text-on-surface-variant/70 uppercase tracking-wider">{item.desc}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Call to Action - Now below the grid for more impact */}
-          <div className="mt-12 relative z-10">
-            <a
-              href={siteConfig.phone.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-4 text-on-surface hover:text-secondary transition-all duration-500"
-            >
-              <span className="font-display text-xl md:text-3xl transition-colors">Falar com a Dra. Tainá</span>
-              <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary group-hover:text-white transition-all duration-500 shadow-sm">
-                <ArrowRight className="w-6 h-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10 max-lg:mt-5">
+              <div className="lg:col-span-7">
+                <h2 className="font-display text-4xl md:text-5xl text-on-surface mb-6 leading-tight">
+                  Pronto para <span className="italic text-secondary font-light relative">
+                    proteger
+                    <svg className="absolute -bottom-2 left-0 w-full h-2 text-secondary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="2" />
+                    </svg>
+                  </span> o que importa?
+                </h2>
+                <p className="font-body text-base text-on-surface-variant leading-relaxed max-w-md">
+                  Nosso escritório oferece <span className="text-secondary font-semibold">soluções estratégicas</span> em Direito de Família, Sucessões e Cível, com foco total na preservação do seu patrimônio e segurança futura.
+                </p>
               </div>
-            </a>
-          </div>
 
-          {/* Social and availability footer for the card */}
-          <div className="mt-16 pt-8 border-t border-on-surface/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
-            <div className="flex items-center gap-6">
-              <span className="font-body text-[10px] font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Siga-nos</span>
-              <div className="flex gap-4">
-                <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface-variant hover:bg-secondary hover:border-secondary hover:text-white transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </a>
-                <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface-variant hover:bg-secondary hover:border-secondary hover:text-white transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
+              {/* Right side differentials to fill space */}
+              <div className="lg:col-span-5 border-l border-on-surface/10 lg:pl-10 hidden lg:block">
+                <p className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-6">Excelência Jurídica</p>
+                <ul className="space-y-6">
+                  {[
+                    { title: "Atendimento Personalizado", desc: "Foco total na sua história" },
+                    { title: "Estratégia Preventiva", desc: "Antecipando conflitos" },
+                    { title: "Sigilo & Ética", desc: "Segurança absoluta" }
+                  ].map((item, i) => (
+                    <li key={i} className="flex flex-col gap-1">
+                      <span className="font-display text-base text-on-surface leading-none font-medium">{item.title}</span>
+                      <span className="font-body text-[11px] text-on-surface-variant/70 uppercase tracking-wider">{item.desc}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-            
-            <div className="hidden lg:flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="font-body text-[10px] font-medium text-on-surface-variant/60 uppercase tracking-widest">Disponível para consultoria</span>
+
+            {/* Call to Action - Now below the grid for more impact */}
+            <div className="mt-12 relative z-10">
+              <a
+                href={siteConfig.phone.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-4 text-on-surface hover:text-secondary transition-all duration-500"
+              >
+                <span className="font-display text-xl md:text-3xl transition-colors">Falar com a Dra. Tainá</span>
+                <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary group-hover:text-white transition-all duration-500 shadow-sm">
+                  <ArrowRight className="w-6 h-6" />
+                </div>
+              </a>
+            </div>
+
+            {/* Social and availability footer for the card */}
+            <div className="mt-16 pt-8 border-t border-on-surface/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
+              <div className="flex items-center gap-6">
+                <span className="font-body text-[10px] font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Siga-nos</span>
+                <div className="flex gap-4">
+                  <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface-variant hover:bg-secondary hover:border-secondary hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+                  </a>
+                  <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface-variant hover:bg-secondary hover:border-secondary hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div className="hidden lg:flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span className="font-body text-[10px] font-medium text-on-surface-variant/60 uppercase tracking-widest">Disponível para consultoria</span>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
 
@@ -141,11 +141,11 @@ export default function Footer() {
                       Atendimento presencial e digital.
                     </p>
                   </div>
-                  
+
                   <div className="flex flex-col gap-3 mt-2">
                     <a href={siteConfig.phone.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center lg:justify-start gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
                       <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-all">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                       </div>
                       {siteConfig.phone.display}
                     </a>
@@ -197,13 +197,13 @@ export default function Footer() {
                     Unidade São Paulo
                   </p>
                   <div className="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm grayscale-30 hover:grayscale-0 transition-all duration-500 h-40">
-                    <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117056.12643543632!2d-46.73602146955077!3d-23.5323491410493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a407d1%3A0xaa95319a4254884c!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1715456000000!5m2!1spt-BR!2sbr" 
-                      width="100%" 
-                      height="100%" 
-                      style={{ border: 0 }} 
-                      allowFullScreen 
-                      loading="lazy" 
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117056.12643543632!2d-46.73602146955077!3d-23.5323491410493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a407d1%3A0xaa95319a4254884c!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1715456000000!5m2!1spt-BR!2sbr"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       title="Mapa Unidade São Paulo"
                     ></iframe>
@@ -215,13 +215,13 @@ export default function Footer() {
                     Unidade Interior
                   </p>
                   <div className="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm grayscale-30 hover:grayscale-0 transition-all duration-500 h-40">
-                    <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.62534579123!2d-45.894165!3d-23.189565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4bb40e4f8d2b%3A0x6b5c4a!2zU8OjbyBKb3PDqSBkb3MgQ2FtcG9zLCBTUA!5e0!3m2!1spt-BR!2sbr!4v1715456000000!5m2!1spt-BR!2sbr" 
-                      width="100%" 
-                      height="100%" 
-                      style={{ border: 0 }} 
-                      allowFullScreen 
-                      loading="lazy" 
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.62534579123!2d-45.894165!3d-23.189565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4bb40e4f8d2b%3A0x6b5c4a!2zU8OjbyBKb3PDqSBkb3MgQ2FtcG9zLCBTUA!5e0!3m2!1spt-BR!2sbr!4v1715456000000!5m2!1spt-BR!2sbr"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       title="Mapa Unidade São José dos Campos"
                     ></iframe>
@@ -240,18 +240,18 @@ export default function Footer() {
                 Advocacia Estratégica & Especializada
               </p>
             </div>
-            
-            <button 
+
+            <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="absolute -top-16 left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 w-12 h-12 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-500 shadow-sm group"
               aria-label="Voltar para o topo"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-y-1 transition-transform"><path d="m18 15-6-6-6 6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-y-1 transition-transform"><path d="m18 15-6-6-6 6" /></svg>
             </button>
 
-            <a 
-              href="https://gabrielcostaluiz.com.br" 
-              target="_blank" 
+            <a
+              href="https://gabrielcostaluiz.com.br"
+              target="_blank"
               rel="noopener noreferrer"
               className="font-body text-[9px] text-on-surface uppercase tracking-[0.2em] hover:text-secondary transition-colors"
             >

@@ -28,8 +28,9 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <Section variant="primary" id="testimonials" showGrid>
-      
-      <style dangerouslySetInnerHTML={{ __html: `
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(calc(-100% / 2)); }
@@ -45,12 +46,12 @@ export default function Testimonials() {
       `}} />
 
       <div className=" mx-auto px-6 md:px-16">
-        <SectionHeader 
+        <SectionHeader
           eyebrow="Depoimentos"
           title={<>Confiança e <br /><span className="italic text-secondary font-light">Resultados Reais</span></>}
           description="A satisfação dos nossos clientes é o reflexo de um trabalho pautado na ética, agilidade e na busca incansável pelos melhores desfechos jurídicos."
         />
-        
+
         {/* Mobile Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:hidden">
           {testimonials.slice(0, 3).map((testimonial, index) => (
@@ -63,7 +64,7 @@ export default function Testimonials() {
           {/* Gradient Masks for a more premium look */}
           <div className="absolute inset-y-0 left-0 w-48 bg-linear-to-r from-surface to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-48 bg-linear-to-l from-surface to-transparent z-10 pointer-events-none"></div>
-          
+
           <div className="animate-marquee gap-12 py-8 px-12">
             {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
               <div key={index} className="w-[480px] shrink-0">

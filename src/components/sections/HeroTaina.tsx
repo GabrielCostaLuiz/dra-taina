@@ -209,11 +209,11 @@ export function HeroTainaDesktop() {
           <div className="absolute top-8 left-8 w-[340px] h-[340px] rounded-full border border-secondary/20 z-10 pointer-events-none" />
           <div className="absolute top-8 left-8 w-[220px] h-[220px] rounded-full border border-secondary/25 z-10 pointer-events-none" />
 
-          {/* Grid de pontos — canto inferior direito */}
-          <div className="absolute bottom-[120px] right-12 z-10 grid pointer-events-none"
+          {/* Grid de pontos — movido para o canto esquerdo da imagem para equilíbrio */}
+          <div className="absolute bottom-[130px] left-12 z-10 grid pointer-events-none"
             style={{ gridTemplateColumns: 'repeat(5, 6px)', gap: '8px' }}>
             {Array.from({ length: 20 }).map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/20" />
+              <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/30" />
             ))}
           </div>
 
@@ -222,39 +222,39 @@ export function HeroTainaDesktop() {
             Direito · Estratégia · Resultado
           </span>
 
-          {/* Card de avaliação — topo direito, sangrando para fora */}
-          <div className="absolute top-12 right-0 z-20 bg-surface rounded-l-2xl px-8 py-5 min-w-[200px] shadow-editorial">
-            <p className="font-body text-[9px] font-medium tracking-[0.18em] uppercase text-secondary mb-2">
-              Avaliação
+          {/* Card de avaliação — topo direito, mais discreto */}
+          <div className="absolute top-12 right-0 z-20 bg-surface/90 backdrop-blur-md rounded-l-2xl px-6 py-4 min-w-[180px] border-l border-y border-outline-variant/10 shadow-lg">
+            <p className="font-body text-[8px] font-bold tracking-[0.2em] uppercase text-secondary mb-2">
+              Excelência
             </p>
-            <div className="flex gap-0.5 mb-1.5">
+            <div className="flex gap-1 mb-2">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 text-secondary fill-secondary" />
+                <Star key={i} className="w-3 h-3 text-secondary fill-secondary" />
               ))}
             </div>
-            <p className="font-display text-base font-light text-on-surface leading-snug">
-              100% de clientes<br />satisfeitos
+            <p className="font-display text-[10px] text-on-surface leading-tight">
+              100% de satisfação<br />dos clientes
             </p>
-            <p className="font-body text-[10px] text-on-surface-variant mt-1">+100 casos resolvidos</p>
           </div>
 
-          {/* Card de identidade — agora flutuando no canto inferior direito */}
-          <div className="absolute bottom-12 right-12 z-20 bg-white p-8 rounded-[32px] min-w-[280px] shadow-2xl border border-outline-variant/20">
-            <p className="font-body text-[9px] font-medium tracking-[0.2em] uppercase text-secondary mb-2.5">
-              Advocacia
-            </p>
-            <p className="font-display text-[22px] font-light text-on-surface leading-snug mb-1">
-              {siteConfig.name}
-            </p>
-            <p className="font-body text-[11px] text-on-surface-variant tracking-wide mb-4">
-              Cível · Família · Sucessões
-            </p>
-            <div className="border-t border-outline-variant/10 pt-4 flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <Award className="w-3.5 h-3.5 text-secondary" />
+          {/* Identidade Editorial — Minimalista e Luxuosa (Substituindo o card pesado) */}
+          <div className="absolute bottom-16 right-16 z-20 flex flex-col items-end text-right">
+            <div className="flex items-center gap-6 mb-6">
+              <div className="flex flex-col">
+                <p className="font-display text-3xl md:text-4xl text-white leading-none mb-2 tracking-tight">
+                  {siteConfig.name}
+                </p>
+                <p className="font-body text-[10px] text-white/50 uppercase tracking-[0.4em] leading-none">
+                  Advocacia Especializada
+                </p>
               </div>
-              <span className="font-body text-[11px] text-on-surface-variant">
-                <span className="text-on-surface font-medium">{siteConfig.oab}</span> · Registro ativo
+              <div className="w-px h-14 bg-secondary/50" />
+            </div>
+            
+            <div className="flex items-center gap-3 py-2.5 px-5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 shadow-2xl">
+              <Award className="w-3.5 h-3.5 text-secondary" />
+              <span className="font-body text-[9px] text-white font-semibold uppercase tracking-[0.15em]">
+                {siteConfig.oab} · Registro Ativo
               </span>
             </div>
           </div>

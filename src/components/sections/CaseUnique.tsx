@@ -19,7 +19,7 @@ export default function CaseUnique() {
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[40px]"></div>
             </div>
-            
+
             {/* Decorative element */}
             <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -z-10"></div>
             <div className="absolute -top-8 -left-8 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
@@ -27,7 +27,7 @@ export default function CaseUnique() {
 
           {/* Text Column */}
           <div className="order-1">
-            <SectionHeader 
+            <SectionHeader
               eyebrow="Compromisso"
               title={<>Atenção personalizada <br /><span className="italic text-secondary font-light">para cada história.</span></>}
               center={false}
@@ -35,13 +35,13 @@ export default function CaseUnique() {
             />
             <div className="space-y-6 text-on-surface-variant font-body text-lg mb-10">
               <p>
-                Entendemos que por trás de cada processo existe uma vida, uma família e um patrimônio construído com esforço. 
+                Entendemos que por trás de cada processo existe uma vida, uma família e um patrimônio construído com esforço.
               </p>
               <p>
                 Não trabalhamos com soluções genéricas. Nosso foco é identificar a estratégia mais inteligente e humana para o seu caso específico, garantindo que você tenha clareza e segurança em cada decisão.
               </p>
             </div>
-            
+
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mb-12">
               {[
                 { label: "Atendimento Exclusivo", icon: UserCheck },
