@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #6b5c4a;
+  --color-primary: #121212; /* Preto Nobre */
   --color-on-primary: #ffffff;
-  --color-primary-container: #dcc7b1;
-  --color-on-primary-container: #625241;
+  --color-primary-container: #e5d9c5;
+  --color-on-primary-container: #121212;
 
-  --color-secondary: #775a19;
-  --color-secondary-light: #a88c4d;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #fed488;
-  --color-on-secondary-container: #785a1a;
+  --color-secondary: #e6b94d; /* Dourado Radiante - Mais vibrante */
+  --color-secondary-light: #fff8dc;
+  --color-secondary-dark: #b8860b;
+  --color-on-secondary: #121212;
+  --color-secondary-container: #fff1be;
+  --color-on-secondary-container: #5d4600;
 
   --color-tertiary: #5e5e5b;
   --color-on-tertiary: #ffffff;
@@ -22,21 +23,21 @@
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
 
-  --color-background: #fff8f3;
-  --color-on-background: #1e1b17;
+  --color-background: #fff8f3; /* Creme/Off-white solicitado */
+  --color-on-background: #121212;
 
   --color-surface: #fff8f3;
-  --color-on-surface: #1e1b17;
-  --color-surface-variant: #e9e1db;
+  --color-on-surface: #121212;
+  --color-surface-variant: #f4f1ee;
   --color-on-surface-variant: #4d453e;
-  --color-outline: #7f756d;
-  --color-outline-variant: #d0c5ba;
+  --color-outline: #c5a059; /* Outline agora é dourado */
+  --color-outline-variant: #e5d9c5;
 
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #faf2ec;
-  --color-surface-container: #f4ece6;
-  --color-surface-container-high: #efe7e0;
-  --color-surface-container-highest: #e9e1db;
+  --color-surface-container-low: #fafaf9;
+  --color-surface-container: #f5f5f4;
+  --color-surface-container-high: #eeeeed;
+  --color-surface-container-highest: #e5e5e4;
 
   --font-display: var(--font-playfair);
   --font-body: var(--font-manrope);
@@ -44,7 +45,7 @@
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
 
-  --shadow-editorial: 0 20px 40px -10px rgba(107, 92, 74, 0.08);
+  --shadow-editorial: 0 20px 40px -10px rgba(197, 160, 89, 0.15); /* Sombra Dourada Sutil */
 }
 
 :root {
@@ -65,6 +66,27 @@ body {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+@layer utilities {
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #b8860b 0%, #e6b94d 50%, #fff8dc 100%);
+    background-size: 200% 200%;
+    animation: gold-shine 5s linear infinite;
+  }
+  
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #b8860b 0%, #e6b94d 50%, #fff8dc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes gold-shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes slow-ping {

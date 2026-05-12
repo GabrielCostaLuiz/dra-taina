@@ -67,40 +67,6 @@ export default function About() {
             ))}
           </div>
 
-          {/* Signature Area */}
-          <div className="flex items-center gap-6 pt-6 border-t border-outline-variant/20">
-            <div className="flex flex-col">
-              <span className="font-display text-2xl text-primary italic leading-none mb-4">Unidades de Atendimento</span>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Leocádio+Advocacia+São+Paulo+SP"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/link font-body text-[10px] uppercase tracking-[0.2em] text-on-surface-variant flex items-center gap-3 hover:text-primary transition-all duration-300 w-fit"
-                >
-                  <MapPin className="w-3.5 h-3.5 text-secondary" />
-                  <span className="relative">
-                    Leocádio Advocacia · São Paulo
-                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full"></span>
-                  </span>
-                  <ArrowUpRight className="w-3 h-3 opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300 ml-1 text-primary" />
-                </a>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Advocacia+São+José+dos+Campos+SP"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/link font-body text-[10px] uppercase tracking-[0.2em] text-on-surface-variant flex items-center gap-3 hover:text-primary transition-all duration-300 w-fit"
-                >
-                  <MapPin className="w-3.5 h-3.5 text-secondary" />
-                  <span className="relative">
-                    Unidade Interior · São José dos Campos
-                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full"></span>
-                  </span>
-                  <ArrowUpRight className="w-3 h-3 opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300 ml-1 text-primary" />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </Section>

@@ -22,7 +22,7 @@ export default function Section({
 
     const variantBackground = {
         white: 'bg-white',
-        primary: 'bg-surface',
+        primary: 'bg-[#fff8f3]',
     }
 
     return (

@@ -19,8 +19,10 @@ export const siteConfig = {
     logo: "/logo.png",
     logoWithBackground: "/logo-com-fundo.png",
     hero: "/taina-hero-new.jpeg",
-    about: "/quem-e-taina.jpeg",
+    heroMobile: "/taina-cut.jpeg",
+    about: "/taina-olho-lado.jpeg",
     cta: "/cta-taina.png",
+    caseUnique: "/taina-escritorio.jpeg",
   },
   seo: {
     title: "Dra. Tainá Leocádio | Advocacia Especializada em São Paulo",

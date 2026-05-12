@@ -9,19 +9,19 @@ const steps = [
     number: "01",
     title: "Consulta Estratégica",
     description: "Um diálogo profundo para entender seus objetivos e blindar seus direitos desde o primeiro contato.",
-    image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1714974528860-cb38ebab0e35?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     number: "02",
     title: "Análise de Viabilidade",
     description: "Mergulhamos nos detalhes técnicos e documentais para construir uma tese jurídica inabalável.",
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070",
   },
   {
     number: "03",
     title: "Execução Diligente",
     description: "Atuação firme e acompanhamento constante, garantindo que cada etapa siga o plano estratégico.",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1774898988393-5c752e4d55e9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 

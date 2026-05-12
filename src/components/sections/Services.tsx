@@ -26,7 +26,7 @@ const servicePillars = [
     title: "Família",
     fullName: "Direito de Família",
     icon: Handshake,
-    image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1553915632-175f60dd8e36?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     whatsappMessage: "Olá Dra. Tainá, gostaria de agendar uma consulta sobre Direito de Família.",
     items: [
       { title: "Divórcio Estratégico", description: "Dissolução de vínculo com foco na preservação do patrimônio e mitigação de conflitos emocionais.", icon: Users },
@@ -100,7 +100,7 @@ export default function Services() {
                 key={pillar.id}
                 onClick={() => setActivePillar(pillar)}
                 className={`px-10 py-4 rounded-full font-body text-sm font-bold transition-all duration-500 border ${activePillar.id === pillar.id
-                  ? "bg-primary text-white border-primary shadow-xl scale-105"
+                  ? "bg-gold-gradient text-white border-transparent shadow-xl scale-105"
                   : "bg-white text-on-surface-variant border-outline-variant/30 hover:border-secondary/50"
                   }`}
               >
@@ -132,30 +132,19 @@ export default function Services() {
             <div className="lg:col-span-4 flex justify-center relative py-12 perspective-1000">
               <div className="relative w-80 h-80 bg-white rounded-full shadow-2xl flex flex-col items-center justify-center p-0 text-center border-4 border-surface-container-high transition-all duration-700 overflow-hidden group hover:scale-105">
 
-                {/* Background Image - Always visible but dimmed */}
+                {/* Background Image - Always fully visible */}
                 <div className="absolute inset-0 transition-all duration-700 transform group-hover:scale-110">
                   <Image
                     src={activePillar.image}
                     alt={`Serviço de ${activePillar.fullName} - ${siteConfig.fullName}`}
                     fill
-                    className="object-cover opacity-20 grayscale-50 transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                    className="object-cover transition-all duration-700"
                   />
-                  {/* Subtle overlay that fades out */}
-                  <div className="absolute inset-0 bg-linear-to-b from-white/40 via-transparent to-white/40 transition-opacity duration-700 group-hover:opacity-0"></div>
-                </div>
-
-                {/* Content that hides on hover */}
-                <div className="relative z-10 p-12 transition-all duration-500 transform group-hover:opacity-0 group-hover:scale-150 group-hover:rotate-12 pointer-events-none">
-                  <div className="w-20 h-20 rounded-3xl bg-white border border-outline-variant/20 shadow-sm flex items-center justify-center text-secondary mx-auto mb-6">
-                    <activePillar.icon className="w-10 h-10" />
-                  </div>
-                  <h4 className="font-display text-2xl text-on-surface mb-2">{activePillar.fullName}</h4>
-                  <div className="w-20 h-1 bg-secondary mx-auto"></div>
                 </div>
 
                 {/* Decorative Rings */}
-                <div className="absolute inset-0 border border-secondary/10 rounded-full scale-110 pointer-events-none transition-all duration-700 group-hover:scale-150 group-hover:opacity-0"></div>
-                <div className="absolute inset-0 border border-secondary/5 border-dashed rounded-full scale-125 animate-spin-slow pointer-events-none transition-all duration-700 group-hover:scale-150 group-hover:opacity-0"></div>
+                <div className="absolute inset-0 border border-secondary/20 rounded-full scale-110 pointer-events-none transition-all duration-700 group-hover:scale-115"></div>
+                <div className="absolute inset-0 border border-secondary/10 border-dashed rounded-full scale-125 animate-spin-slow pointer-events-none transition-all duration-700 group-hover:scale-130"></div>
               </div>
             </div>
 
@@ -205,7 +194,7 @@ export default function Services() {
                 className="w-full flex items-center justify-between p-6 text-left"
               >
                 <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${activePillar.id === pillar.id ? "bg-primary text-white" : "bg-surface-container text-secondary"
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${activePillar.id === pillar.id ? "bg-gold-gradient text-white" : "bg-surface-container text-secondary"
                     }`}>
                     <pillar.icon className="w-6 h-6" />
                   </div>
@@ -238,7 +227,7 @@ export default function Services() {
                       href={`https://wa.me/5511940044592?text=${encodeURIComponent(pillar.whatsappMessage)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 bg-primary text-white py-4 px-6 rounded-2xl font-body font-bold text-sm"
+                      className="flex items-center justify-center gap-3 bg-gold-gradient text-white py-4 px-6 rounded-2xl font-body font-bold text-sm shadow-lg"
                     >
                       <span className="truncate">Saber mais sobre {pillar.title}</span>
                       <ArrowRight className="w-4 h-4 shrink-0" />

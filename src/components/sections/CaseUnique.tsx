@@ -3,6 +3,8 @@ import Section from "../layout/Section";
 import SectionHeader from "../ui/SectionHeader";
 import { UserCheck, ShieldCheck, Gavel, Eye } from "lucide-react";
 
+import { siteConfig } from "@/constants/config";
+
 export default function CaseUnique() {
   return (
     <Section id="case-unique" variant="white" gradient="both" className="overflow-hidden">
@@ -12,8 +14,8 @@ export default function CaseUnique() {
           <div className="relative order-2">
             <div className="relative aspect-3/4 md:aspect-4/5 rounded-[40px] overflow-hidden shadow-2xl group">
               <Image
-                src="/cada-caso-taina.png"
-                alt="Cada caso é único - Dra. Tainá Leocádio"
+                src={siteConfig.images.caseUnique}
+                alt={`Cada caso é único - ${siteConfig.fullName}`}
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />

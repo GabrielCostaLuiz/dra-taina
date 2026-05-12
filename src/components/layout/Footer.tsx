@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="absolute -top-10 inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.04] -translate-y-2"
-          style={{ backgroundImage: `linear-gradient(to right, #6b5c4a 1px, transparent 1px), linear-gradient(to bottom, #6b5c4a 1px, transparent 1px)`, backgroundSize: '60px 60px' }}>
+          style={{ backgroundImage: `linear-gradient(to right, #e6b94d 1px, transparent 1px), linear-gradient(to bottom, #e6b94d 1px, transparent 1px)`, backgroundSize: '60px 60px' }}>
         </div>
 
 
@@ -86,7 +86,7 @@ export default function Footer() {
                 className="group inline-flex items-center gap-4 text-on-surface hover:text-secondary transition-all duration-500"
               >
                 <span className="font-display text-xl md:text-3xl transition-colors">Falar com a Dra. Tainá</span>
-                <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary group-hover:text-white transition-all duration-500 shadow-sm">
+                <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-gold-gradient group-hover:border-transparent group-hover:text-white transition-all duration-500 shadow-sm">
                   <ArrowRight className="w-6 h-6" />
                 </div>
               </a>
@@ -143,14 +143,14 @@ export default function Footer() {
                   </div>
 
                   <div className="flex flex-col gap-3 mt-2">
-                    <a href={siteConfig.phone.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center lg:justify-start gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
-                      <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-all">
+                    <a href={siteConfig.phone.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center lg:justify-start gap-3 text-sm text-on-surface-variant hover:text-secondary transition-colors group">
+                      <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                       </div>
                       {siteConfig.phone.display}
                     </a>
-                    <a href={`mailto:${siteConfig.email}`} className="flex items-center justify-center lg:justify-start gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors group">
-                      <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-all">
+                    <a href={`mailto:${siteConfig.email}`} className="flex items-center justify-center lg:justify-start gap-3 text-sm text-on-surface-variant hover:text-secondary transition-colors group">
+                      <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                         <Mail className="w-3.5 h-3.5" />
                       </div>
                       {siteConfig.email}
@@ -166,18 +166,18 @@ export default function Footer() {
                 <div className="flex flex-col gap-6">
                   <p className="font-body text-[10px] font-bold text-primary/30 uppercase tracking-widest">Navegação</p>
                   <div className="flex flex-col gap-4">
-                    <Link href="#services" className="text-sm text-on-surface-variant hover:text-primary transition-colors">Serviços</Link>
-                    <Link href="#about" className="text-sm text-on-surface-variant hover:text-primary transition-colors">Sobre</Link>
-                    <Link href="#process" className="text-sm text-on-surface-variant hover:text-primary transition-colors">Método</Link>
-                    <Link href="#faq" className="text-sm text-on-surface-variant hover:text-primary transition-colors">FAQ</Link>
+                    <Link href="#services" className="text-sm text-on-surface-variant hover:text-secondary transition-colors">Serviços</Link>
+                    <Link href="#about" className="text-sm text-on-surface-variant hover:text-secondary transition-colors">Sobre</Link>
+                    <Link href="#process" className="text-sm text-on-surface-variant hover:text-secondary transition-colors">Método</Link>
+                    <Link href="#faq" className="text-sm text-on-surface-variant hover:text-secondary transition-colors">FAQ</Link>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-6">
                   <p className="font-body text-[10px] font-bold text-primary/30 uppercase tracking-widest">Social</p>
                   <div className="flex flex-col gap-4">
-                    <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-on-surface-variant hover:text-primary transition-colors">Instagram</a>
-                    <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm text-on-surface-variant hover:text-primary transition-colors">LinkedIn</a>
+                    <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-on-surface-variant hover:text-secondary transition-colors">Instagram</a>
+                    <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm text-on-surface-variant hover:text-secondary transition-colors">LinkedIn</a>
                   </div>
                 </div>
 
@@ -189,45 +189,6 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Embedded Maps Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
-                <div className="space-y-3">
-                  <p className="font-body text-[9px] font-bold text-secondary uppercase tracking-widest flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                    Unidade São Paulo
-                  </p>
-                  <div className="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm grayscale-30 hover:grayscale-0 transition-all duration-500 h-40">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117056.12643543632!2d-46.73602146955077!3d-23.5323491410493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a407d1%3A0xaa95319a4254884c!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1715456000000!5m2!1spt-BR!2sbr"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Mapa Unidade São Paulo"
-                    ></iframe>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <p className="font-body text-[9px] font-bold text-secondary uppercase tracking-widest flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                    Unidade Interior
-                  </p>
-                  <div className="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm grayscale-30 hover:grayscale-0 transition-all duration-500 h-40">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.62534579123!2d-45.894165!3d-23.189565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4bb40e4f8d2b%3A0x6b5c4a!2zU8OjbyBKb3PDqSBkb3MgQ2FtcG9zLCBTUA!5e0!3m2!1spt-BR!2sbr!4v1715456000000!5m2!1spt-BR!2sbr"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Mapa Unidade São José dos Campos"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 

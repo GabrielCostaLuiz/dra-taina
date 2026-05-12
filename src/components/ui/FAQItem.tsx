@@ -16,7 +16,7 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
           <h3 className="font-display text-xl lg:text-2xl text-on-surface group-hover/details:text-secondary transition-colors pr-8">
             {question}
           </h3>
-          <div className="shrink-0 w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary transition-all duration-500 group-open/details:rotate-45 group-open/details:bg-secondary group-open/details:text-white">
+          <div className="shrink-0 w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary transition-all duration-500 group-open/details:rotate-45 group-open/details:bg-gold-gradient group-open/details:text-white">
             <Plus className="w-5 h-5" />
           </div>
         </summary>

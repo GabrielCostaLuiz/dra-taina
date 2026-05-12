@@ -91,14 +91,14 @@ export function NavbarDesktop() {
           <div className="flex items-center gap-10 ml-16">
             {[
               { name: "Serviços", href: "#services" },
-              { name: "Sobre Nós", href: "#about" },
+              { name: "Sobre", href: "#about" },
               { name: "Processo", href: "#process" },
               { name: "FAQ", href: "#faq" }
             ].map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="font-body text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:text-secondary text-on-surface-variant"
+                className="font-body text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:text-secondary text-on-surface-variant"
               >
                 {item.name}
               </Link>
