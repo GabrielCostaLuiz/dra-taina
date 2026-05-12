@@ -47,6 +47,7 @@ export default function CaseUnique() {
                 eyebrow="Compromisso"
                 title={<>Atenção personalizada <br /><span className="italic text-secondary font-light">para cada história.</span></>}
                 center={false}
+                centerMobile={false}
                 className="mb-8!"
               />
             </motion.div>
