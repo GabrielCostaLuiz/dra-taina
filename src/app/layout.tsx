@@ -62,6 +62,9 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${playfair.variable} ${manrope.variable} scroll-smooth antialiased`}
     >
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Dra. Tainá" />
+      </head>
       <body className="font-body">
         <Schema />
         {children}
