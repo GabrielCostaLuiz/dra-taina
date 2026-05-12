@@ -124,7 +124,7 @@ export default function Footer() {
                 className="group inline-flex items-center gap-4 text-on-surface! hover:text-secondary! transition-all duration-500"
               >
                 <span className="font-display text-xl md:text-3xl transition-colors">Falar com a Dra. Tainá</span>
-                <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-gold-gradient group-hover:border-transparent group-hover:text-secondary transition-all duration-500 shadow-sm">
+                <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-gold-gradient group-hover:border-transparent group-hover:text-secondary transition-all duration-500 shadow-sm in-data-[theme='terracotta']:shadow-lg ">
                   <ArrowRight className="w-6 h-6" />
                 </div>
               </a>
@@ -248,7 +248,7 @@ export default function Footer() {
 
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="absolute -top-16 left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 w-12 h-12 rounded-full bg-surface border border-outline-variant/30 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-500 shadow-sm group"
+              className="absolute -top-16 left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 w-12 h-12 rounded-full bg-surface border border-outline-variant/30 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-500 shadow-sm in-data-[theme='terracotta']:shadow-lg  group"
               aria-label="Voltar para o topo"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-y-1 transition-transform"><path d="m18 15-6-6-6 6" /></svg>

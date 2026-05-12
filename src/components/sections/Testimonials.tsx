@@ -58,6 +58,7 @@ export default function Testimonials() {
             eyebrow="Depoimentos"
             title={<>Confiança e <br /><span className="italic text-secondary font-light">Resultados Reais</span></>}
             description="A satisfação dos nossos clientes é o reflexo de um trabalho pautado na ética, agilidade e na busca incansável pelos melhores desfechos jurídicos."
+            centerMobile={false}
           />
         </motion.div>
 

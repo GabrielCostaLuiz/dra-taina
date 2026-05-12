@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #121212; /* Preto Nobre */
+  --color-primary: #121212;
+  /* Preto Nobre */
   --color-on-primary: #ffffff;
   --color-primary-container: #e5d9c5;
   --color-on-primary-container: #121212;
 
-  --color-secondary: #e6b94d; /* Dourado Radiante - Mais vibrante */
+  --color-secondary: #e6b94d;
+  /* Dourado Radiante - Mais vibrante */
   --color-secondary-light: #fff8dc;
   --color-secondary-dark: #b8860b;
   --color-on-secondary: #121212;
@@ -23,14 +25,16 @@
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
 
-  --color-background: #fff8f3; /* Creme/Off-white solicitado */
+  --color-background: #fff8f3;
+  /* Creme/Off-white solicitado */
   --color-on-background: #121212;
 
   --color-surface: #fff8f3;
   --color-on-surface: #121212;
   --color-surface-variant: #f4f1ee;
   --color-on-surface-variant: #4d453e;
-  --color-outline: #c5a059; /* Outline agora é dourado */
+  --color-outline: #c5a059;
+  /* Outline agora é dourado */
   --color-outline-variant: #d4c8b8;
 
   --color-surface-container-lowest: #ffffff;
@@ -46,7 +50,8 @@
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
 
-  --shadow-editorial: 0 20px 40px -10px rgba(197, 160, 89, 0.15); /* Sombra Dourada Sutil */
+  --shadow-editorial: 0 20px 40px -10px rgba(197, 160, 89, 0.15);
+  /* Sombra Dourada Sutil */
 }
 
 :root {
@@ -60,23 +65,24 @@
   --color-background: #C78467;
   --color-on-background: #ffffff;
   --color-token-white: #C78467;
-  
+
   /* Mantendo cards e elementos com fundo claro para contraste */
   --color-surface: #ffffff;
   --color-on-surface: #2C1810;
   --color-surface-variant: #f4f1ee;
   --color-on-surface-variant: #4d453e;
-  
+
   --color-surface-container-lowest: #ffffff;
   --color-surface-container-low: #ffffff;
   --color-surface-container: #ffffff;
   --color-surface-container-high: #ffffff;
   --color-surface-container-highest: #ffffff;
-  
+
   --color-outline: rgba(0, 0, 0, 0.1);
   --color-outline-variant: rgba(0, 0, 0, 0.12);
-  
-  --color-secondary: #f0c666; /* Dourado Boutique (um pouco mais claro para terracota) */
+
+  --color-secondary: #f0c666;
+  /* Dourado Boutique (um pouco mais claro para terracota) */
 }
 
 /* Garante que textos diretamente sobre o fundo terracota sejam brancos */
@@ -162,7 +168,7 @@ body {
     background-size: 200% 200%;
     animation: gold-shine 5s linear infinite;
   }
-  
+
   .btn-premium {
     background: linear-gradient(135deg, #b8860b 0%, #e6b94d 50%, #d4a017 100%);
     background-size: 200% 200%;
@@ -187,7 +193,7 @@ body {
     border-color: rgba(255, 255, 255, 0.5);
     color: #ffffff;
   }
-  
+
   .text-gold-gradient {
     background: linear-gradient(135deg, #b8860b 0%, #e6b94d 50%, #fff8dc 100%);
     -webkit-background-clip: text;
@@ -197,13 +203,23 @@ body {
 }
 
 @keyframes gold-shine {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes slow-ping {
-  75%, 100% {
+
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }

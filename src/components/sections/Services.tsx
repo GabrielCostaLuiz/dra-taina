@@ -82,7 +82,7 @@ const servicePillars = [
 
 export default function Services() {
   const [activePillarId, setActivePillarId] = useState<string | null>(null);
-  
+
   useEffect(() => {
     // Only set initial active pillar on desktop
     const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
@@ -107,12 +107,13 @@ export default function Services() {
             eyebrow="Nossas Especialidades"
             title={<>Estratégia Jurídica de <br /><span className="italic text-secondary font-light">Alto Padrão</span></>}
             description="Soluções personalizadas em quatro pilares fundamentais do direito contemporâneo."
+            centerMobile={false}
           />
         </motion.div>
 
         {/* Desktop View: Tabs + Circle Layout */}
         <div className="hidden lg:block">
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center gap-10 mb-24"
             variants={{
               initial: { opacity: 0, y: 20 },
@@ -150,7 +151,7 @@ export default function Services() {
           </motion.div>
 
           <AnimatePresence mode="wait">
-            <motion.div 
+            <motion.div
               key={activePillar.id}
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
               initial={{ opacity: 0, y: 20 }}
@@ -160,15 +161,15 @@ export default function Services() {
             >
               <div className="lg:col-span-4 space-y-16">
                 {activePillar.items.slice(0, 2).map((item, index) => (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="group relative lg:text-right"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="inline-flex lg:flex-row-reverse items-center gap-6 mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-sm transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
+                      <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-sm in-data-[theme='terracotta']:shadow-lg  transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
                         <item.icon className="w-6 h-6" />
                       </div>
                       <h3 className="font-display text-2xl text-on-surface group-hover:text-secondary transition-colors">
@@ -184,7 +185,7 @@ export default function Services() {
               </div>
 
               <div className="lg:col-span-4 flex justify-center relative py-12 perspective-1000">
-                <motion.div 
+                <motion.div
                   className="relative w-80 h-80 bg-surface rounded-full shadow-2xl flex flex-col items-center justify-center p-0 text-center border-4 border-surface-container-high transition-all duration-700 overflow-hidden group hover:scale-105"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -208,15 +209,15 @@ export default function Services() {
 
               <div className="lg:col-span-4 space-y-16">
                 {activePillar.items.slice(2, 4).map((item, index) => (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="group relative text-left"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: (index + 2) * 0.1 }}
                   >
                     <div className="flex items-center gap-6 mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-sm transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
+                      <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-sm in-data-[theme='terracotta']:shadow-lg  transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
                         <item.icon className="w-6 h-6" />
                       </div>
                       <h3 className="font-display text-2xl text-on-surface group-hover:text-secondary transition-colors">
@@ -251,7 +252,7 @@ export default function Services() {
           {servicePillars.map((pillar, pillarIdx) => (
             <motion.div
               key={pillar.id}
-              className={`bg-surface rounded-3xl border transition-all duration-500 overflow-hidden ${activePillar.id === pillar.id ? "border-secondary/30 shadow-xl" : "border-outline-variant/20!"
+              className={`bg-surface in-data-[theme='terracotta']:bg-white/95 rounded-3xl border transition-all duration-500 overflow-hidden ${activePillar.id === pillar.id ? "border-secondary/30 shadow-xl" : "border-outline-variant/20!"
                 }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -275,7 +276,7 @@ export default function Services() {
 
               <AnimatePresence>
                 {activePillarId === pillar.id && (
-                  <motion.div 
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -303,7 +304,7 @@ export default function Services() {
                           className="btn-premium py-4 px-6 text-xs w-full text-center"
                         >
                           Saber mais sobre {pillar.title}
-              
+
                         </a>
                       </div>
                     </div>

@@ -57,15 +57,15 @@ function ProcessMobile() {
             eyebrow="Nosso Método"
             title={<>Como conduzimos <br /><span className="italic text-secondary font-light">seu caso</span> com <br />excelência.</>}
             description="Um processo jurídico claro, eficiente e transparente, desenhado para oferecer segurança e tranquilidade em cada passo da jornada."
-            center={true}
+            centerMobile={false}
             className="mb-12"
           />
         </motion.div>
 
         <div className="space-y-12 mb-16">
           {steps.map((step, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="flex flex-col gap-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ function ProcessMobile() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           className="flex justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

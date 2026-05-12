@@ -5,6 +5,7 @@ interface SectionHeaderProps {
   title: ReactNode;
   description?: string;
   center?: boolean;
+  centerMobile?: boolean;
   className?: string;
 }
 
@@ -13,10 +14,15 @@ export default function SectionHeader({
   title,
   description,
   center = true,
+  centerMobile = true,
   className = "",
 }: SectionHeaderProps) {
   return (
-    <div className={`${center ? "text-center" : "text-left"} mb-16 lg:mb-24 ${className}`}>
+    <div className={`
+      ${centerMobile ? "text-center" : "text-left"} 
+      ${center ? "lg:text-center" : "lg:text-left"} 
+      mb-16 lg:mb-24 ${className}
+    `}>
       <span className="font-body text-xs font-bold text-secondary uppercase tracking-[0.3em] mb-4 block">
         {eyebrow}
       </span>
@@ -24,7 +30,11 @@ export default function SectionHeader({
         {title}
       </h2>
       {description && (
-        <p className={`font-body text-lg section-description max-w-2xl leading-relaxed ${center ? "mx-auto" : ""}`}>
+        <p className={`
+          font-body text-lg section-description max-w-2xl leading-relaxed 
+          ${centerMobile ? "mx-auto" : "mx-0"} 
+          ${center ? "lg:mx-auto" : "lg:mx-0"}
+        `}>
           {description}
         </p>
       )}

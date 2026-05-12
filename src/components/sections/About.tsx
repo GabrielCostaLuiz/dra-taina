@@ -21,7 +21,7 @@ export default function About() {
   };
 
   return (
-    <Section id="about" gradient="both">
+    <Section id="about" gradient="both" >
       <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
         <motion.div 
           className="relative group"

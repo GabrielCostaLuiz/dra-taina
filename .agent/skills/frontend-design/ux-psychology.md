@@ -823,7 +823,7 @@ button.onclick = () => {
   padding: 24px;
   background: white;
   border-radius: 16px; /* Friendly = larger radius */
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm in-data-[theme='terracotta']:shadow-lg );
 }
 
 .testimonial-avatar {

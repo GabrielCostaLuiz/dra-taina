@@ -21,12 +21,12 @@ export function HeroTainaMobile() {
   return (
     <section className="relative min-h-screen bg-background flex flex-col pt-24 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+      <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
         style={{ backgroundImage: `linear-gradient(to right, #c5a059 1px, transparent 1px), linear-gradient(to bottom, #c5a059 1px, transparent 1px)`, backgroundSize: '40px 40px' }}>
       </div>
 
       {/* Image Section */}
-      <motion.div 
+      <motion.div
         className="relative w-full h-[55vh] flex-shrink-0 z-10 px-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export function HeroTainaMobile() {
           <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent"></div>
 
           {/* Identity Floating Label */}
-          <motion.div 
+          <motion.div
             className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-4"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export function HeroTainaMobile() {
         </div>
 
         {/* Rating Badge / OAB */}
-        <motion.div 
+        <motion.div
           className="absolute -top-4 right-10 bg-surface px-4 py-2 rounded-xl shadow-xl z-20 border border-outline-variant/20"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -73,7 +73,7 @@ export function HeroTainaMobile() {
       {/* Content Section */}
       <div className="grow flex flex-col items-center justify-center px-8 py-12 relative z-20 text-center">
         {/* Eyebrow */}
-        <motion.div 
+        <motion.div
           className="flex items-center gap-3 mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -86,7 +86,7 @@ export function HeroTainaMobile() {
           <div className="w-6 h-px bg-secondary/30" />
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           className="font-display text-[2.5rem] leading-[1.1] text-on-surface mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -99,14 +99,14 @@ export function HeroTainaMobile() {
         {/* Areas */}
         <div className="flex flex-wrap justify-center gap-3 mb-10 w-full">
           {["Cível", "Família", "Sucessões", "Imobiliário"].map((area, idx) => (
-              <motion.div 
-                key={area} 
-                className="px-5 py-2.5 rounded-full bg-surface border border-outline-variant/20 shadow-sm flex items-center justify-center min-w-[100px]"
+            <motion.div
+              key={area}
+              className="px-5 py-2.5 rounded-full bg-surface border border-outline-variant/20 shadow-sm in-data-[theme='terracotta']:shadow-lg   flex items-center justify-center min-w-[100px]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.3 + (idx * 0.1), duration: 0.5 }}
             >
-              <span className="font-body text-[9px] font-bold text-secondary uppercase tracking-[0.2em] whitespace-nowrap">{area}</span>
+              <span className="font-body text-[9px] font-bold text-secondary! uppercase tracking-[0.2em] whitespace-nowrap">{area}</span>
             </motion.div>
           ))}
         </div>
@@ -128,27 +128,27 @@ export function HeroTainaMobile() {
           </motion.div>
 
           {/* New 4-info Grid */}
-          <motion.div 
-            className="bg-surface rounded-3xl border border-outline-variant/20 overflow-hidden shadow-sm"
+          <motion.div
+            className="bg-surface rounded-3xl border border-outline-variant/20 overflow-hidden shadow-sm in-data-[theme='terracotta']:shadow-lg "
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.9, duration: 0.8 }}
           >
             <div className="grid grid-cols-2">
               <div className="p-5 border-b border-r border-secondary/20">
-                <p className="font-display text-xl font-bold text-secondary leading-none">{siteConfig.experience} Anos</p>
+                <p className="font-display text-xl font-bold text-secondary! leading-none">{siteConfig.experience} Anos</p>
                 <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Experiência</p>
               </div>
               <div className="p-5 border-b border-secondary/20">
-                <p className="font-display text-xl font-bold text-secondary leading-none">100+</p>
+                <p className="font-display text-xl font-bold text-secondary! leading-none">100+</p>
                 <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Casos Atendidos</p>
               </div>
               <div className="p-5 border-r border-secondary/20">
-                <p className="font-display text-xl font-bold text-secondary leading-none">Ativa</p>
+                <p className="font-display text-xl font-bold text-secondary! leading-none">Ativa</p>
                 <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">OAB/SP Registro</p>
               </div>
               <div className="p-5">
-                <p className="font-display text-xl font-bold text-secondary leading-none">Híbrido</p>
+                <p className="font-display text-xl font-bold text-secondary! leading-none">Híbrido</p>
                 <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Atendimento</p>
               </div>
             </div>
@@ -165,7 +165,7 @@ export function HeroTainaDesktop() {
       {/* Background Geometric Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.04]"
+        <div className="absolute inset-0 opacity-[0.05]"
           style={{ backgroundImage: `linear-gradient(to right, #d4a96b 1px, transparent 1px), linear-gradient(to bottom, #d4a96b 1px, transparent 1px)`, backgroundSize: '60px 60px' }}>
         </div>
 
@@ -178,7 +178,7 @@ export function HeroTainaDesktop() {
         <div className="flex items-center justify-center p-8 lg:mt-16 md:p-24 order-2 lg:order-1 relative">
           <div className="max-w-xl">
             {/* Eyebrow */}
-            <motion.div 
+            <motion.div
               className="flex items-center gap-3 mb-8"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -190,7 +190,7 @@ export function HeroTainaDesktop() {
               </span>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               className="font-display text-5xl md:text-[4.75rem] lg:text-6xl 2xl:text-7xl leading-[1.1] mb-8 text-on-surface"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -203,9 +203,9 @@ export function HeroTainaDesktop() {
             {/* Áreas de Atuação */}
             <div className="flex flex-wrap gap-3 mb-8">
               {["Cível", "Família", "Sucessões", "Imobiliário"].map((area, idx) => (
-                <motion.div 
-                  key={area} 
-                  className="px-6 py-2.5 rounded-full bg-surface border border-outline-variant/20 shadow-sm hover:shadow-md hover:border-secondary/30 transition-all duration-300 group cursor-default flex items-center justify-center"
+                <motion.div
+                  key={area}
+                  className="px-6 py-2.5 rounded-full bg-surface border border-outline-variant/20 shadow-sm in-data-[theme='terracotta']:shadow-lg   hover:shadow-md hover:border-secondary/30 transition-all duration-300 group cursor-default flex items-center justify-center"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + (idx * 0.1), duration: 0.5 }}
@@ -214,8 +214,8 @@ export function HeroTainaDesktop() {
                 </motion.div>
               ))}
             </div>
-            
-            <motion.p 
+
+            <motion.p
               className="font-body text-lg section-description mb-10 max-w-lg leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -224,16 +224,16 @@ export function HeroTainaDesktop() {
               Aliamos rigor técnico e atendimento humanizado para oferecer soluções estratégicas em questões jurídicas de alta complexidade.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row items-center gap-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
             >
-              <a 
-                href={siteConfig.phone.whatsapp} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={siteConfig.phone.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-premium px-12 py-5 text-sm"
               >
                 Falar com especialista
@@ -250,7 +250,7 @@ export function HeroTainaDesktop() {
         {/* Image Side */}
         <div className="relative order-1 lg:order-2 min-h-[500px] lg:min-h-full">
           {/* Foto com curva */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0 z-0"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -269,13 +269,13 @@ export function HeroTainaDesktop() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-l-[10rem] lg:rounded-l-[20rem] z-[1] pointer-events-none" />
 
           {/* Anéis concêntricos */}
-          <motion.div 
+          <motion.div
             className="absolute top-8 left-0 w-[240px] h-[240px] rounded-full border border-secondary/20 z-10 pointer-events-none"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.5, duration: 1.5 }}
           />
-          <motion.div 
+          <motion.div
             className="absolute top-8 left-0 w-[120px] h-[120px] rounded-full border border-secondary/25 z-10 pointer-events-none"
             initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -286,8 +286,8 @@ export function HeroTainaDesktop() {
           <div className="absolute bottom-[130px] left-12 z-10 grid pointer-events-none"
             style={{ gridTemplateColumns: 'repeat(5, 6px)', gap: '8px' }}>
             {Array.from({ length: 20 }).map((_, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 className="w-1.5 h-1.5 rounded-full bg-white/30"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -297,7 +297,7 @@ export function HeroTainaDesktop() {
           </div>
 
           {/* Label vertical */}
-          <motion.span 
+          <motion.span
             className="absolute top-1/2 -right-15 -translate-y-1/2 rotate-90 z-10 font-body text-[9px] font-medium tracking-[0.3em] uppercase text-white/30 whitespace-nowrap pointer-events-none"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -307,7 +307,7 @@ export function HeroTainaDesktop() {
           </motion.span>
 
           {/* Card de avaliação */}
-          <motion.div 
+          <motion.div
             className="absolute top-12 right-0 z-20 bg-surface/90 backdrop-blur-md rounded-l-2xl px-6 py-4 min-w-[180px] border-l border-y border-outline-variant/10 shadow-lg"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -328,7 +328,7 @@ export function HeroTainaDesktop() {
 
           {/* Identidade Editorial */}
           <div className="absolute bottom-16 right-16 z-20 flex flex-col items-end text-right">
-            <motion.div 
+            <motion.div
               className="flex items-center gap-6 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -344,8 +344,8 @@ export function HeroTainaDesktop() {
               </div>
               <div className="w-px h-14 bg-secondary/50" />
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="flex items-center gap-3 py-2.5 px-5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 shadow-2xl"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

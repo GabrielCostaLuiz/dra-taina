@@ -16,10 +16,10 @@ export default function ProcessStep({ number, title, description, icon }: Proces
       </span>
 
       <div className="relative z-10 flex flex-col gap-6">
-        <div className="w-12 h-12 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-sm transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
+        <div className="w-12 h-12 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-sm in-data-[theme='terracotta']:shadow-lg  transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
           {icon}
         </div>
-        
+
         <div>
           <h3 className="font-display text-2xl text-on-surface mb-3 tracking-tight group-hover:text-secondary transition-colors">
             {title}

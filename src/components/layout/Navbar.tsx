@@ -19,16 +19,30 @@ export default function Navbar() {
 }
 
 export function NavbarMobile() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="absolute top-0 inset-x-0 z-10 bg-surface py-3">
-      <div className="flex items-center justify-center  px-6">
+    <nav className={`fixed top-0 inset-x-0 z-50 py-3 transition-all duration-500 ${
+      isScrolled 
+        ? "bg-surface in-data-[theme='terracotta']:bg-[#D6AA91]/95 backdrop-blur-md shadow-lg" 
+        : "bg-surface in-data-[theme='terracotta']:bg-[#C78467] backdrop-blur-none shadow-none"
+    }`}>
+      <div className="flex items-center justify-center px-6">
         <Link href="/" className="flex items-center">
           <Image
             src={siteConfig.images.logo}
             alt={siteConfig.name}
             width={160}
             height={40}
-            className="h-11 w-auto object-contain"
+            className={`h-11 w-auto object-contain transition-all duration-500 in-data-[theme='terracotta']:brightness-0 in-data-[theme='terracotta']:invert ${!isScrolled ? "in-data-[theme='terracotta']:brightness-0 in-data-[theme='terracotta']:invert" : ""}`}
             priority
           />
         </Link>
@@ -83,7 +97,7 @@ export function NavbarDesktop() {
               alt={siteConfig.name}
               width={180}
               height={48}
-              className="h-12 w-auto object-contain"
+              className="h-12 w-auto object-contain transition-all duration-500 in-data-[theme='terracotta']:brightness-0 in-data-[theme='terracotta']:invert"
               priority
             />
           </Link>
