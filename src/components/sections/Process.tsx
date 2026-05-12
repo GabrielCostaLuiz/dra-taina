@@ -105,7 +105,7 @@ function ProcessMobile() {
             rel="noopener noreferrer"
             className="btn-premium px-8 py-5 text-base w-full max-w-[280px] text-center"
           >
-            Iniciar minha jornada
+            iniciar atendimento
           </a>
         </motion.div>
       </div>
@@ -140,7 +140,7 @@ function ProcessDesktop() {
                 rel="noopener noreferrer"
                 className="btn-premium px-8 py-4 text-sm"
               >
-                Iniciar minha jornada
+                iniciar atendimento
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </motion.div>

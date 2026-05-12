@@ -7,16 +7,22 @@ import { Palette, Check } from "lucide-react";
 type Theme = "boutique" | "terracotta";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("boutique");
+  const [theme, setTheme] = useState<Theme>("terracotta");
   const [isOpen, setIsOpen] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("site-theme") as Theme;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    }
+    // Determine if we should show the toggle
+    const isDev = process.env.NODE_ENV === "development";
+    const forceShow = process.env.NEXT_PUBLIC_SWITCH_COLOR === "true";
+    setShouldRender(isDev || forceShow);
+
+    const savedTheme = localStorage.getItem("site-theme") as Theme || "terracotta";
+    setTheme(savedTheme);
+    document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
+
+  if (!shouldRender) return null;
 
   const toggleTheme = (newTheme: Theme) => {
     setTheme(newTheme);
