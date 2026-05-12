@@ -5,7 +5,7 @@ import { UserCheck, ShieldCheck, Gavel, Eye } from "lucide-react";
 
 export default function CaseUnique() {
   return (
-    <Section id="case-unique" variant="white" gradient="both">
+    <Section id="case-unique" variant="white" gradient="both" className="overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2  lg:gap-24 items-center">
           {/* Image Column */}

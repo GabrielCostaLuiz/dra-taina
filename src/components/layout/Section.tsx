@@ -28,7 +28,7 @@ export default function Section({
     return (
         <section
             id={id}
-            className={`relative py-32 ${className} ${variantBackground[variant]}`}
+            className={`relative py-32 overflow-x-clip ${className || ''} ${variantBackground[variant]}`}
         >
             {/* Geometric Background Elements */}
             {showGrid && (
