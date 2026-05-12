@@ -122,7 +122,7 @@ export default function FAQ() {
                   onClick={() => setActiveCategory(isOpen ? null : cat.id)}
                   className={`w-full flex items-center justify-between p-5 rounded-2xl transition-all duration-500 border ${
                     isOpen 
-                      ? "bg-white/95 border-secondary/40 shadow-lg" 
+                      ? "bg-white/90 border-secondary/40 shadow-lg" 
                       : "bg-white/85 border-secondary/20 hover:bg-white/90"
                   }`}
                 >
