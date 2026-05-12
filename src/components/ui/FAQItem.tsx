@@ -11,14 +11,17 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="group/faq bg-white/80 backdrop-blur-xl rounded-[32px] border border-secondary/30 overflow-hidden transition-all duration-500 hover:shadow-lg hover:border-secondary/40">
+    <div className="group/faq bg-white/95 backdrop-blur-xl rounded-[32px] border border-secondary/30 overflow-hidden transition-all duration-500 hover:shadow-lg hover:border-secondary/40">
       {/* Desktop Version: Custom Accordion */}
       <div className="hidden md:block">
         <button 
           onClick={() => setIsOpen(!isOpen)}
           className="w-full flex justify-between items-center p-8 cursor-pointer text-left"
         >
-          <h3 className="font-display text-xl lg:text-2xl text-primary! transition-colors pr-8 group-hover/faq:translate-x-1 duration-300">
+          <h3 
+            className="font-display text-xl lg:text-2xl transition-colors pr-8 group-hover/faq:translate-x-1 duration-300"
+            style={{ color: '#4a3f35' }}
+          >
             {question}
           </h3>
           <div className={`shrink-0 w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-500 ${
@@ -41,7 +44,10 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
             >
               <div className="px-8 pb-10">
                 <div className="h-px bg-secondary/30 mb-8"></div>
-                <p className="font-body text-lg text-primary leading-relaxed font-medium">
+                <p 
+                  className="font-body text-lg leading-relaxed font-medium"
+                  style={{ color: '#4a3f35', opacity: 0.9 }}
+                >
                   {answer}
                 </p>
               </div>
@@ -50,13 +56,19 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
         </AnimatePresence>
       </div>
 
-      {/* Mobile Version: Always Open Card (or also accordion if you prefer) */}
+      {/* Mobile Version: Always Open Card */}
       <div className="md:hidden p-8">
-        <h3 className="font-display text-xl text-primary! mb-4 leading-tight">
+        <h3 
+          className="font-display text-xl mb-4 leading-tight"
+          style={{ color: '#4a3f35' }}
+        >
           {question}
         </h3>
         <div className="h-px bg-secondary/30 mb-5"></div>
-        <p className="font-body text-base text-primary/80 leading-relaxed font-medium">
+        <p 
+          className="font-body text-base leading-relaxed font-medium"
+          style={{ color: '#4a3f35', opacity: 0.85 }}
+        >
           {answer}
         </p>
       </div>

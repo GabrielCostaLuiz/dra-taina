@@ -12,8 +12,7 @@ import {
   ShieldCheck,
   Scale,
   ArrowRight,
-  ChevronDown,
-  Plus
+  ChevronDown
 } from "lucide-react";
 import { siteConfig } from "@/constants/config";
 import Section from "../layout/Section";
@@ -191,7 +190,6 @@ export default function Services() {
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.8 }}
                 >
-                  {/* Background Image - Always fully visible */}
                   <div className="absolute inset-0 transition-all duration-700 transform group-hover:scale-110">
                     <Image
                       src={activePillar.image}
@@ -201,7 +199,6 @@ export default function Services() {
                     />
                   </div>
 
-                  {/* Decorative Rings */}
                   <div className="absolute inset-0 border border-secondary/20 rounded-full scale-110 pointer-events-none transition-all duration-700 group-hover:scale-115"></div>
                   <div className="absolute inset-0 border border-secondary/10 border-dashed rounded-full scale-125 animate-spin-slow pointer-events-none transition-all duration-700 group-hover:scale-130"></div>
                 </motion.div>
@@ -252,7 +249,7 @@ export default function Services() {
           {servicePillars.map((pillar, pillarIdx) => (
             <motion.div
               key={pillar.id}
-              className={`relative rounded-[32px] transition-all duration-500 overflow-hidden border ${activePillarId === pillar.id ? "bg-white/35 border-white/50 shadow-2xl scale-[1.02]" : "bg-white/15 border-white/20"
+              className={`relative rounded-[32px] transition-all duration-500 overflow-hidden border ${activePillarId === pillar.id ? "bg-white/95 border-secondary/40 shadow-2xl scale-[1.02]" : "bg-white/85 border-secondary/20"
                 } backdrop-blur-xl`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -260,27 +257,30 @@ export default function Services() {
               transition={{ delay: pillarIdx * 0.1 }}
             >
               {/* Number Background Decor */}
-              <span className="absolute -top-4 -right-2 font-display text-8xl font-black text-white/5 select-none pointer-events-none">
+              <span className="absolute -top-4 -right-2 font-display text-8xl font-black text-secondary/5 select-none pointer-events-none">
                 0{pillarIdx + 1}
               </span>
 
               <button
                 onClick={() => setActivePillarId(activePillarId === pillar.id ? null : pillar.id)}
-                className="w-full flex items-center justify-between p-8 text-left transition-colors relative z-10"
+                className="w-full flex items-center justify-between p-5 text-left transition-colors relative z-10"
               >
                 <div className="flex items-center gap-5">
-                  <div className={`shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${activePillarId === pillar.id ? 'bg-gold-gradient text-white shadow-lg' : 'bg-white/10 border border-white/20 text-white'}`}>
+                  <div className={`shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${activePillarId === pillar.id ? 'bg-secondary text-white shadow-lg' : 'bg-secondary/10 border border-secondary/20 text-secondary'}`}>
                     <pillar.icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="font-body text-[10px] uppercase tracking-[0.3em] text-secondary font-bold mb-1">Especialidade 0{pillarIdx + 1}</p>
-                    <h3 className={`font-display text-2xl transition-colors ${activePillarId === pillar.id ? "text-white" : "text-white/90"}`}>
+                    <p className="font-body text-[9px] uppercase tracking-[0.3em] text-secondary font-bold mb-1">Especialidade 0{pillarIdx + 1}</p>
+                    <h3 
+                      className="font-display text-xl transition-colors"
+                      style={{ color: '#4a3f35' }}
+                    >
                       {pillar.fullName}
                     </h3>
                   </div>
                 </div>
                 <div className={`transition-transform duration-500 ${activePillarId === pillar.id ? "rotate-180" : ""}`}>
-                  <ChevronDown className={`w-6 h-6 ${activePillarId === pillar.id ? "text-secondary" : "text-white/30"}`} />
+                  <ChevronDown className={`w-6 h-6 ${activePillarId === pillar.id ? "text-secondary" : "text-[#4a3f35]/40"}`} />
                 </div>
               </button>
 
@@ -294,7 +294,7 @@ export default function Services() {
                     className="overflow-hidden"
                   >
                     <div className="px-8 pb-10 pt-4 relative z-10">
-                      <div className="h-px bg-white/20 w-full mb-8"></div>
+                      <div className="h-px bg-secondary/10 w-full mb-8"></div>
                       
                       <div className="grid gap-8">
                         {pillar.items.map((item, idx) => (
@@ -302,8 +302,8 @@ export default function Services() {
                             <div className="flex items-start gap-4">
                               <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></div>
                               <div>
-                                <h4 className="font-display text-lg text-white mb-2">{item.title}</h4>
-                                <p className="font-body text-sm text-white/70 leading-relaxed">
+                                <h4 className="font-display text-lg mb-2" style={{ color: '#4a3f35' }}>{item.title}</h4>
+                                <p className="font-body text-sm leading-relaxed" style={{ color: '#4a3f35', opacity: 0.8 }}>
                                   {item.description}
                                 </p>
                               </div>

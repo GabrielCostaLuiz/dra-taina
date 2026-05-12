@@ -33,7 +33,7 @@ export function NavbarMobile() {
     <nav className={`fixed top-0 inset-x-0 z-50 py-3 transition-all duration-500 ${
       isScrolled 
         ? "bg-[#D6AA91]/95 backdrop-blur-md shadow-lg" 
-        : "bg-[#C78467] backdrop-blur-none shadow-none"
+        : " backdrop-blur-none shadow-none"
     }`}>
       <div className="flex items-center justify-center px-6">
         <Link href="/" className="flex items-center">

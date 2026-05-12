@@ -21,9 +21,20 @@ export function HeroTainaMobile() {
   return (
     <section className="relative min-h-screen bg-background flex flex-col pt-20 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
-        style={{ backgroundImage: `linear-gradient(to right, #c5a059 1px, transparent 1px), linear-gradient(to bottom, #c5a059 1px, transparent 1px)`, backgroundSize: '40px 40px' }}>
-      </div>
+     <div className={`absolute inset-0 z-0 overflow-hidden pointer-events-none block`}>
+                {/* Subtle Grid Pattern */}
+                <div className="absolute inset-0 opacity-[0.04] -translate-y-2"
+                    style={{ backgroundImage: `linear-gradient(to right, #6b5c4a 1px, transparent 1px), linear-gradient(to bottom, #6b5c4a 1px, transparent 1px)`, backgroundSize: '60px 60px' }}>
+                </div>
+
+
+                {/* <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+                <div className="absolute -bottom-20 left-1/3 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]"></div> */}
+
+                {/* Floating Line Accents */}
+                <div className="absolute top-1/3 left-10 w-px h-32 bg-linear-to-b from-transparent via-primary/20 to-transparent"></div>
+                <div className="absolute bottom-1/4 left-1/4 w-32 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent"></div>
+            </div>
 
       {/* Image Section */}
       <motion.div
@@ -62,29 +73,39 @@ export function HeroTainaMobile() {
         </motion.div>
 
         <motion.h1
-          className="font-display text-[2.5rem] leading-[1.1] text-on-surface mb-8"
+          className="font-display flex flex-col items-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.8 }}
         >
-          Proteção Jurídica para o seu <br />
-          <span className="italic text-secondary font-light text-[3rem]">Patrimônio e Futuro.</span>
+          <span className="text-[32px] leading-none text-white italic font-light">
+            Proteção Jurídica
+          </span>
+          <span className="text-[16px] uppercase tracking-[0.3em] text-white/60 my-4 font-body font-bold">
+            para o seu
+          </span>
+          <span className="text-[42px] leading-[0.9] text-secondary font-normal italic">
+            Patrimônio <br /> 
+            <span className="text-[32px]">& Futuro.</span>
+          </span>
         </motion.h1>
 
-        {/* Areas */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8 w-full max-w-[320px] mx-auto">
+        {/* Areas Editorial Style */}
+        <motion.div
+          className="w-full max-w-[340px] mx-auto py-6 border-y border-white/10 mb-12 flex flex-wrap justify-center items-center gap-x-4 gap-y-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.3, duration: 1 }}
+        >
           {["Cível", "Família", "Sucessões", "Imobiliário"].map((area, idx) => (
-            <motion.div
-              key={area}
-              className="px-4 py-2 rounded-full bg-white/80 backdrop-blur-xl border border-white/20 shadow-xl flex items-center justify-center grow basis-[40%]"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.3 + (idx * 0.1), duration: 0.5 }}
-            >
-              <span className="font-body text-[8px] font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">{area}</span>
-            </motion.div>
+            <div key={area} className="flex items-center gap-4">
+              <span className="font-body text-[10px] font-bold text-white/80 uppercase tracking-[0.25em]">
+                {area}
+              </span>
+              {idx < 3 && <div className="w-1 h-1 rounded-full bg-secondary/40" />}
+            </div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="space-y-12 w-full">
           <motion.div
@@ -96,7 +117,7 @@ export function HeroTainaMobile() {
               href={siteConfig.phone.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-premium px-10 py-5 text-sm w-full"
+              className="btn-premium px-10 py-4 text-sm w-full"
             >
               Falar com especialista
             </a>
@@ -172,7 +193,7 @@ export function HeroTainaDesktop() {
               transition={{ delay: 0.2, duration: 1 }}
             >
               Proteção Jurídica para o seu <br />
-              <span className="italic text-secondary font-light">Patrimônio e Futuro.</span>
+              <span className="italic text-secondary font-light">Patrimônio & Futuro.</span>
             </motion.h1>
 
             {/* Áreas de Atuação */}

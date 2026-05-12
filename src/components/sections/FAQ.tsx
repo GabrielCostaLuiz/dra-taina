@@ -120,24 +120,25 @@ export default function FAQ() {
               <div key={cat.id} className="group">
                 <button
                   onClick={() => setActiveCategory(isOpen ? null : cat.id)}
-                  className={`w-full flex items-center justify-between p-6 rounded-2xl transition-all duration-500 border ${
+                  className={`w-full flex items-center justify-between p-5 rounded-2xl transition-all duration-500 border ${
                     isOpen 
-                      ? "bg-white/25 border-secondary/40 shadow-lg" 
-                      : "bg-white/15 border-white/10 hover:bg-white/10 hover:border-secondary/20"
+                      ? "bg-white/95 border-secondary/40 shadow-lg" 
+                      : "bg-white/85 border-secondary/20 hover:bg-white/90"
                   }`}
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2">
                     <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
                       isOpen ? "bg-secondary scale-125 shadow-[0_0_10px_rgba(212,175,55,0.5)]" : "bg-secondary/40"
                     }`} />
-                    <h3 className={`font-display text-base uppercase tracking-[0.3em] font-bold transition-colors ${
-                      isOpen ? "text-secondary" : "text-secondary/70 group-hover:text-secondary"
-                    }`}>
+                    <h3 
+                       className="font-display text-xl transition-colors"
+                      style={{ color: '#4a3f35' }}
+                    >
                       {cat.category}
                     </h3>
                   </div>
-                  <ChevronDown className={`w-5 h-5 text-secondary transition-transform duration-500 ${
-                    isOpen ? "rotate-180" : ""
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${
+                    isOpen ? "rotate-180 text-secondary" : "text-[#4a3f35]/40"
                   }`} />
                 </button>
 
