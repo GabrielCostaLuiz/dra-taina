@@ -23,7 +23,7 @@ export const siteConfig = {
     cta: "/cta-taina.png",
   },
   seo: {
-    title: "Tainá Leocádio | Advocacia Especializada",
+    title: "Dra. Tainá Leocádio | Advocacia Especializada em São Paulo",
     description: "Advogada especializada em Cível, Família, Sucessões e Imobiliário. Atendimento estratégico e humanizado para proteger seu patrimônio e sua família.",
     keywords: ["advogada", "direito de família", "sucessões", "direito imobiliário", "cível", "Tainá Leocádio", "inventário", "divórcio"],
   },
