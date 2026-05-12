@@ -174,7 +174,7 @@ export function HeroTainaDesktop() {
         <div className="flex items-center justify-center p-8 lg:mt-16 md:p-24 order-2 lg:order-1 relative">
           <div className="max-w-xl">
             {/* Eyebrow */}
-            <motion.div
+            {/* <motion.div
               className="flex items-center gap-3 mb-8"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -184,7 +184,7 @@ export function HeroTainaDesktop() {
               <span className="font-body text-[11px] font-bold text-secondary uppercase tracking-[0.2em]">
                 Advocacia Especializada & Estratégica
               </span>
-            </motion.div>
+            </motion.div> */}
 
             <motion.h1
               className="font-display text-5xl md:text-[4.75rem] lg:text-6xl 2xl:text-7xl leading-[1.1] mb-8 text-on-surface"

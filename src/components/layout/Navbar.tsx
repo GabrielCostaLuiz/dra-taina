@@ -97,7 +97,7 @@ export function NavbarDesktop() {
               alt={siteConfig.name}
               width={180}
               height={48}
-              className="h-12 w-auto object-contain transition-all duration-500 brightness-0 invert"
+              className="h-14 w-auto object-contain transition-all duration-500 brightness-0 invert"
               priority
             />
           </Link>
@@ -112,7 +112,7 @@ export function NavbarDesktop() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="font-body text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:text-secondary text-white/90"
+                className="font-body text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:text-secondary text-white/90"
               >
                 {item.name}
               </Link>
