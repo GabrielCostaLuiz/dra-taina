@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import { CheckCircle2, Gavel, Award, Star, ChevronDown, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/constants/config";
+import { motion } from "framer-motion";
 
 export default function HeroTaina() {
   return (
@@ -17,14 +19,19 @@ export default function HeroTaina() {
 
 export function HeroTainaMobile() {
   return (
-    <section className="relative min-h-screen bg-[#fff8f3] flex flex-col pt-24 overflow-hidden">
+    <section className="relative min-h-screen bg-background flex flex-col pt-24 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: `linear-gradient(to right, #c5a059 1px, transparent 1px), linear-gradient(to bottom, #c5a059 1px, transparent 1px)`, backgroundSize: '40px 40px' }}>
       </div>
 
       {/* Image Section */}
-      <div className="relative w-full h-[55vh] flex-shrink-0 z-10 px-6">
+      <motion.div 
+        className="relative w-full h-[55vh] flex-shrink-0 z-10 px-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
         <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-2xl">
           <Image
             src={siteConfig.images.heroMobile}
@@ -33,82 +40,119 @@ export function HeroTainaMobile() {
             className="object-cover object-top"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent"></div>
 
           {/* Identity Floating Label */}
-          <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-4">
+          <motion.div 
+            className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
             <p className="font-display text-white text-lg font-light leading-tight">
               {siteConfig.name}
             </p>
             <p className="font-body text-white/70 text-[9px] uppercase tracking-widest mt-1">
               Cível · Família · Sucessões · Imobiliário
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Rating Badge / OAB */}
-        <div className="absolute -top-4 right-10 bg-surface px-4 py-2 rounded-xl shadow-xl z-20 border border-outline-variant/20">
+        <motion.div 
+          className="absolute -top-4 right-10 bg-surface px-4 py-2 rounded-xl shadow-xl z-20 border border-outline-variant/20"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+        >
           <p className="font-body text-[7px] font-bold text-secondary uppercase tracking-[0.1em] mb-0.5">Registro Ativo</p>
           <p className="font-display text-[10px] font-bold text-on-surface uppercase tracking-wider">{siteConfig.oab}</p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Content Section */}
       <div className="grow flex flex-col items-center justify-center px-8 py-12 relative z-20 text-center">
         {/* Eyebrow */}
-        <div className="flex items-center gap-3 mb-6">
+        <motion.div 
+          className="flex items-center gap-3 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+        >
           <div className="w-6 h-px bg-secondary/30" />
           <span className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em]">
             Advocacia Especializada & Estratégica
           </span>
           <div className="w-6 h-px bg-secondary/30" />
-        </div>
+        </motion.div>
 
-        <h1 className="font-display text-[2.5rem] leading-[1.1] text-on-surface mb-8">
+        <motion.h1 
+          className="font-display text-[2.5rem] leading-[1.1] text-on-surface mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.1, duration: 0.8 }}
+        >
           Proteção Jurídica para o seu <br />
           <span className="italic text-secondary font-light text-[3rem]">Patrimônio e Futuro.</span>
-        </h1>
+        </motion.h1>
 
-        {/* Areas - Premium Variant with better Contrast */}
+        {/* Areas */}
         <div className="flex flex-wrap justify-center gap-3 mb-10 w-full">
-          {["Cível", "Família", "Sucessões", "Imobiliário"].map((area) => (
-            <div key={area} className="px-5 py-2.5 rounded-full bg-white border border-outline-variant/20 shadow-sm flex items-center justify-center min-w-[100px]">
+          {["Cível", "Família", "Sucessões", "Imobiliário"].map((area, idx) => (
+              <motion.div 
+                key={area} 
+                className="px-5 py-2.5 rounded-full bg-surface border border-outline-variant/20 shadow-sm flex items-center justify-center min-w-[100px]"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.3 + (idx * 0.1), duration: 0.5 }}
+            >
               <span className="font-body text-[9px] font-bold text-secondary uppercase tracking-[0.2em] whitespace-nowrap">{area}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className="space-y-12 w-full">
-              <a
-                href={siteConfig.phone.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center px-10 py-5 bg-gold-gradient text-white font-display text-sm uppercase tracking-[0.2em] overflow-hidden rounded-full shadow-2xl transition-all duration-500 hover:scale-105 active:scale-95 w-full whitespace-nowrap"
-              >
-                Falar com especialista
-              </a>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.7, duration: 0.8 }}
+          >
+            <a
+              href={siteConfig.phone.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-premium px-10 py-5 text-sm w-full"
+            >
+              Falar com especialista
+            </a>
+          </motion.div>
 
           {/* New 4-info Grid */}
-          <div className="bg-white rounded-3xl border border-outline-variant/20 overflow-hidden shadow-sm">
+          <motion.div 
+            className="bg-surface rounded-3xl border border-outline-variant/20 overflow-hidden shadow-sm"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.9, duration: 0.8 }}
+          >
             <div className="grid grid-cols-2">
-              <div className="p-5 border-b border-r border-outline-variant/10">
-                <p className="font-display text-xl font-bold text-secondary leading-none">3+ Anos</p>
-                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5">Experiência</p>
+              <div className="p-5 border-b border-r border-secondary/20">
+                <p className="font-display text-xl font-bold text-secondary leading-none">{siteConfig.experience} Anos</p>
+                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Experiência</p>
               </div>
-              <div className="p-5 border-b border-outline-variant/10">
+              <div className="p-5 border-b border-secondary/20">
                 <p className="font-display text-xl font-bold text-secondary leading-none">100+</p>
-                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5">Casos Atendidos</p>
+                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Casos Atendidos</p>
               </div>
-              <div className="p-5 border-r border-outline-variant/10">
+              <div className="p-5 border-r border-secondary/20">
                 <p className="font-display text-xl font-bold text-secondary leading-none">Ativa</p>
-                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5">OAB/SP Registro</p>
+                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">OAB/SP Registro</p>
               </div>
               <div className="p-5">
                 <p className="font-display text-xl font-bold text-secondary leading-none">Híbrido</p>
-                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5">Atendimento</p>
+                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Atendimento</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -117,7 +161,7 @@ export function HeroTainaMobile() {
 
 export function HeroTainaDesktop() {
   return (
-    <section className="relative min-h-screen flex items-stretch overflow-hidden bg-[#fff8f3]">
+    <section className="relative min-h-screen flex items-stretch overflow-hidden bg-background">
       {/* Background Geometric Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Subtle Grid Pattern */}
@@ -134,53 +178,84 @@ export function HeroTainaDesktop() {
         <div className="flex items-center justify-center p-8 lg:mt-16 md:p-24 order-2 lg:order-1 relative">
           <div className="max-w-xl">
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-8">
+            <motion.div 
+              className="flex items-center gap-3 mb-8"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="w-10 h-px bg-secondary" />
               <span className="font-body text-[11px] font-bold text-secondary uppercase tracking-[0.2em]">
                 Advocacia Especializada & Estratégica
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="font-display text-5xl md:text-[4.75rem] lg:text-6xl 2xl:text-7xl leading-[1.1] mb-8 text-on-surface">
+            <motion.h1 
+              className="font-display text-5xl md:text-[4.75rem] lg:text-6xl 2xl:text-7xl leading-[1.1] mb-8 text-on-surface"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 1 }}
+            >
               Proteção Jurídica para o seu <br />
               <span className="italic text-secondary font-light">Patrimônio e Futuro.</span>
-            </h1>
+            </motion.h1>
 
             {/* Áreas de Atuação */}
             <div className="flex flex-wrap gap-3 mb-8">
-              {["Cível", "Família", "Sucessões", "Imobiliário"].map((area) => (
-                <div key={area} className="px-6 py-2.5 rounded-full bg-white border border-outline-variant/20 shadow-sm hover:shadow-md hover:border-secondary/30 transition-all duration-300 group cursor-default flex items-center justify-center">
+              {["Cível", "Família", "Sucessões", "Imobiliário"].map((area, idx) => (
+                <motion.div 
+                  key={area} 
+                  className="px-6 py-2.5 rounded-full bg-surface border border-outline-variant/20 shadow-sm hover:shadow-md hover:border-secondary/30 transition-all duration-300 group cursor-default flex items-center justify-center"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 + (idx * 0.1), duration: 0.5 }}
+                >
                   <span className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em] group-hover:tracking-[0.25em] transition-all duration-300">{area}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
             
-            <p className="font-body text-lg text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+            <motion.p 
+              className="font-body text-lg section-description mb-10 max-w-lg leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 1 }}
+            >
               Aliamos rigor técnico e atendimento humanizado para oferecer soluções estratégicas em questões jurídicas de alta complexidade.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-8">
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+            >
               <a 
                 href={siteConfig.phone.whatsapp} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-gold-gradient text-white px-12 py-5 rounded-full font-body text-md font-bold hover:brightness-110 transition-all duration-500 shadow-editorial hover:shadow-2xl hover:-translate-y-1 text-center w-full sm:w-auto"
+                className="btn-premium px-12 py-5 text-sm"
               >
                 Falar com especialista
               </a>
 
               <div className="flex flex-col">
-                <span className="font-display text-2xl font-semibold text-secondary leading-none">3+ Anos</span>
+                <span className="font-display text-2xl font-semibold text-secondary leading-none">{siteConfig.experience} Anos</span>
                 <span className="font-body text-[10px] uppercase tracking-wider text-on-surface-variant mt-1">de experiência</span>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         {/* Image Side */}
         <div className="relative order-1 lg:order-2 min-h-[500px] lg:min-h-full">
           {/* Foto com curva */}
-          <div className="absolute inset-0 z-0">
+          <motion.div 
+            className="absolute inset-0 z-0"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             <Image
               src={siteConfig.images.hero}
               alt={`${siteConfig.fullName} - Advogada Especialista em São Paulo`}
@@ -188,30 +263,56 @@ export function HeroTainaDesktop() {
               className="object-cover rounded-l-[10rem] lg:rounded-l-[20rem] shadow-[-20px_0_50px_rgba(0,0,0,0.05)]"
               priority
             />
-          </div>
+          </motion.div>
 
           {/* Gradient sutil na base da foto */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-l-[10rem] lg:rounded-l-[20rem] z-[1] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-l-[10rem] lg:rounded-l-[20rem] z-[1] pointer-events-none" />
 
           {/* Anéis concêntricos */}
-          <div className="absolute top-8 left-0 w-[240px] h-[240px] rounded-full border border-secondary/20 z-10 pointer-events-none" />
-          <div className="absolute top-8 left-0 w-[120px] h-[120px] rounded-full border border-secondary/25 z-10 pointer-events-none" />
+          <motion.div 
+            className="absolute top-8 left-0 w-[240px] h-[240px] rounded-full border border-secondary/20 z-10 pointer-events-none"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1.5 }}
+          />
+          <motion.div 
+            className="absolute top-8 left-0 w-[120px] h-[120px] rounded-full border border-secondary/25 z-10 pointer-events-none"
+            initial={{ scale: 1.2, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.7, duration: 1.5 }}
+          />
 
           {/* Grid de pontos */}
           <div className="absolute bottom-[130px] left-12 z-10 grid pointer-events-none"
             style={{ gridTemplateColumns: 'repeat(5, 6px)', gap: '8px' }}>
             {Array.from({ length: 20 }).map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/30" />
+              <motion.div 
+                key={i} 
+                className="w-1.5 h-1.5 rounded-full bg-white/30"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5 + (i * 0.05) }}
+              />
             ))}
           </div>
 
           {/* Label vertical */}
-          <span className="absolute top-1/2 -right-15 -translate-y-1/2 rotate-90 z-10 font-body text-[9px] font-medium tracking-[0.3em] uppercase text-white/30 whitespace-nowrap pointer-events-none">
+          <motion.span 
+            className="absolute top-1/2 -right-15 -translate-y-1/2 rotate-90 z-10 font-body text-[9px] font-medium tracking-[0.3em] uppercase text-white/30 whitespace-nowrap pointer-events-none"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2, duration: 1 }}
+          >
             Direito · Estratégia · Resultado
-          </span>
+          </motion.span>
 
           {/* Card de avaliação */}
-          <div className="absolute top-12 right-0 z-20 bg-surface/90 backdrop-blur-md rounded-l-2xl px-6 py-4 min-w-[180px] border-l border-y border-outline-variant/10 shadow-lg">
+          <motion.div 
+            className="absolute top-12 right-0 z-20 bg-surface/90 backdrop-blur-md rounded-l-2xl px-6 py-4 min-w-[180px] border-l border-y border-outline-variant/10 shadow-lg"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.8, duration: 0.8 }}
+          >
             <p className="font-body text-[8px] font-bold tracking-[0.2em] uppercase text-secondary mb-2">
               Excelência
             </p>
@@ -223,11 +324,16 @@ export function HeroTainaDesktop() {
             <p className="font-display text-[10px] text-on-surface leading-tight">
               100% de satisfação<br />dos clientes
             </p>
-          </div>
+          </motion.div>
 
           {/* Identidade Editorial */}
           <div className="absolute bottom-16 right-16 z-20 flex flex-col items-end text-right">
-            <div className="flex items-center gap-6 mb-6">
+            <motion.div 
+              className="flex items-center gap-6 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.2, duration: 1 }}
+            >
               <div className="flex flex-col">
                 <p className="font-display text-3xl md:text-4xl text-white leading-none mb-2 tracking-tight">
                   {siteConfig.name}
@@ -237,14 +343,19 @@ export function HeroTainaDesktop() {
                 </p>
               </div>
               <div className="w-px h-14 bg-secondary/50" />
-            </div>
+            </motion.div>
             
-            <div className="flex items-center gap-3 py-2.5 px-5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 shadow-2xl">
+            <motion.div 
+              className="flex items-center gap-3 py-2.5 px-5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 shadow-2xl"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 2.5, duration: 0.8 }}
+            >
               <Award className="w-3.5 h-3.5 text-secondary" />
               <span className="font-body text-[9px] text-white font-semibold uppercase tracking-[0.15em]">
                 {siteConfig.oab} · Registro Ativo
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

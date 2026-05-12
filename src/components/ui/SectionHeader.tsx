@@ -24,7 +24,7 @@ export default function SectionHeader({
         {title}
       </h2>
       {description && (
-        <p className={`font-body text-lg text-on-surface-variant max-w-2xl leading-relaxed ${center ? "mx-auto" : ""}`}>
+        <p className={`font-body text-lg section-description max-w-2xl leading-relaxed ${center ? "mx-auto" : ""}`}>
           {description}
         </p>
       )}

@@ -21,8 +21,8 @@ export default function Section({
 }: SectionProps) {
 
     const variantBackground = {
-        white: 'bg-white',
-        primary: 'bg-[#fff8f3]',
+        white: 'bg-token-white',
+        primary: 'bg-background',
     }
 
     return (

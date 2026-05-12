@@ -23,7 +23,7 @@ export default function WhatsAppFloating() {
       },
       { 
         threshold: 0,
-        rootMargin: "0px 0px 0px 0px" 
+        rootMargin: "0px 0px 400px 0px" // Trigger visibility change 400px before footer hits bottom
       }
     );
 

@@ -1,7 +1,9 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { siteConfig } from "@/constants/config";
 import Section from "../layout/Section";
+import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
@@ -10,20 +12,31 @@ export default function CTA() {
         <div className="grid grid-cols-1 lg:grid-cols-12 overflow-visible">
           
           {/* Left Side: Overlapping Image Card */}
-          <div className="lg:col-span-5 relative z-20 group lg:-mr-12">
+          <motion.div 
+            className="lg:col-span-5 relative z-20 group lg:-mr-12"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             <div className="aspect-4/5 rounded-3xl overflow-hidden shadow-2xl relative">
               <Image 
                 src={siteConfig.images.cta} 
                 alt="Dra. Tainá Leocádio" 
                 fill 
-                className="object-cover object-top"
+                className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
               />
-
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Side: Dark Content Card */}
-          <div className="lg:col-span-7 bg-primary rounded-3xl lg:rounded-l-none lg:rounded-r-[48px] p-12 md:p-20 flex flex-col justify-center relative z-10 lg:my-12 shadow-inner">
+          <motion.div 
+            className="lg:col-span-7 bg-primary rounded-3xl lg:rounded-l-none lg:rounded-r-[48px] p-12 md:p-20 flex flex-col justify-center relative z-10 lg:my-12 shadow-inner"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             {/* Social Icons */}
             <div className="flex gap-4 mb-10">
               <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-secondary-light hover:border-secondary-light transition-all">
@@ -35,27 +48,46 @@ export default function CTA() {
             </div>
 
             <div className="max-w-lg">
-              <p className="font-body text-xl text-white/90 leading-relaxed mb-8">
-                Nosso escritório é especializado em oferecer <span className="text-primary-container font-semibold">soluções estratégicas</span> em Direito de Família, Sucessões e Cível, com foco na preservação do seu patrimônio.
-              </p>
-              
-              <p className="font-body text-base text-white/60 leading-relaxed mb-12">
-                Aliamos o rigor técnico à sensibilidade humana para garantir que você receba o melhor <span className="text-secondary-light">suporte jurídico</span> possível, protegendo o que é mais importante para você.
-              </p>
-
-              <a 
-                href={siteConfig.phone.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-4  lg:text-secondary-light font-display text-2xl hover:text-white transition-all duration-300"
+              <motion.p 
+                className="font-body text-xl text-white/90 leading-relaxed mb-8"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Falar com a Dra. Tainá
-                <div className="w-12 h-12 rounded-full border border-secondary-light/30 flex items-center justify-center group-hover:border-white transition-colors">
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </a>
+                Nosso escritório é especializado em oferecer <span className="text-primary-container font-semibold">soluções estratégicas</span> em Direito de Família, Sucessões e Cível, com foco na preservação do seu patrimônio.
+              </motion.p>
+              
+              <motion.p 
+                className="font-body text-base text-white/60 leading-relaxed mb-12"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+              >
+                Aliamos o rigor técnico à sensibilidade humana para garantir que você receba o melhor <span className="text-secondary-light">suporte jurídico</span> possível, protegendo o que é mais importante para você.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+              >
+                <a 
+                  href={siteConfig.phone.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-4  lg:text-secondary-light font-display text-2xl hover:text-white transition-all duration-300"
+                >
+                  Falar com a Dra. Tainá
+                  <div className="w-12 h-12 rounded-full border border-secondary-light/30 flex items-center justify-center group-hover:border-white transition-colors">
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </a>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
           
         </div>
       </div>

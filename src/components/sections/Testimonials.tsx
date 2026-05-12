@@ -1,6 +1,8 @@
+"use client";
 import Section from "../layout/Section";
 import TestimonialCard from "../ui/TestimonialCard";
 import SectionHeader from "../ui/SectionHeader";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -46,24 +48,45 @@ export default function Testimonials() {
       `}} />
 
       <div className=" mx-auto px-6 md:px-16">
-        <SectionHeader
-          eyebrow="Depoimentos"
-          title={<>Confiança e <br /><span className="italic text-secondary font-light">Resultados Reais</span></>}
-          description="A satisfação dos nossos clientes é o reflexo de um trabalho pautado na ética, agilidade e na busca incansável pelos melhores desfechos jurídicos."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <SectionHeader
+            eyebrow="Depoimentos"
+            title={<>Confiança e <br /><span className="italic text-secondary font-light">Resultados Reais</span></>}
+            description="A satisfação dos nossos clientes é o reflexo de um trabalho pautado na ética, agilidade e na busca incansável pelos melhores desfechos jurídicos."
+          />
+        </motion.div>
 
         {/* Mobile Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:hidden">
           {testimonials.slice(0, 3).map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+            >
+              <TestimonialCard {...testimonial} />
+            </motion.div>
           ))}
         </div>
 
         {/* Desktop Infinite Carousel */}
-        <div className="hidden lg:block overflow-hidden relative w-full -mx-6 md:-mx-16">
+        <motion.div 
+          className="hidden lg:block overflow-hidden relative w-full "
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
           {/* Gradient Masks for a more premium look */}
-          <div className="absolute inset-y-0 left-0 w-48 bg-linear-to-r from-surface to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-48 bg-linear-to-l from-surface to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-48 bg-linear-to-r from-background to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-48 bg-linear-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
           <div className="animate-marquee gap-12 py-8 px-12">
             {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
@@ -72,7 +95,7 @@ export default function Testimonials() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </Section>
   );

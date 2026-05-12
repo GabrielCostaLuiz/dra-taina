@@ -31,13 +31,14 @@
   --color-surface-variant: #f4f1ee;
   --color-on-surface-variant: #4d453e;
   --color-outline: #c5a059; /* Outline agora é dourado */
-  --color-outline-variant: #e5d9c5;
+  --color-outline-variant: #d4c8b8;
 
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #fafaf9;
-  --color-surface-container: #f5f5f4;
-  --color-surface-container-high: #eeeeed;
-  --color-surface-container-highest: #e5e5e4;
+  --color-surface-container-low: #ffffff;
+  --color-surface-container: #ffffff;
+  --color-surface-container-high: #ffffff;
+  --color-surface-container-highest: #ffffff;
+  --color-token-white: #ffffff;
 
   --font-display: var(--font-playfair);
   --font-body: var(--font-manrope);
@@ -51,6 +52,93 @@
 :root {
   --background: #fff8f3;
   --foreground: #1e1b17;
+}
+
+[data-theme='terracotta'] {
+  --background: #C78467;
+  --foreground: #ffffff;
+  --color-background: #C78467;
+  --color-on-background: #ffffff;
+  --color-token-white: #C78467;
+  
+  /* Mantendo cards e elementos com fundo claro para contraste */
+  --color-surface: #ffffff;
+  --color-on-surface: #2C1810;
+  --color-surface-variant: #f4f1ee;
+  --color-on-surface-variant: #4d453e;
+  
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #ffffff;
+  --color-surface-container: #ffffff;
+  --color-surface-container-high: #ffffff;
+  --color-surface-container-highest: #ffffff;
+  
+  --color-outline: rgba(0, 0, 0, 0.1);
+  --color-outline-variant: rgba(0, 0, 0, 0.12);
+  
+  --color-secondary: #f0c666; /* Dourado Boutique (um pouco mais claro para terracota) */
+}
+
+/* Garante que textos diretamente sobre o fundo terracota sejam brancos */
+[data-theme='terracotta'] .bg-background h1,
+[data-theme='terracotta'] .bg-background h2,
+[data-theme='terracotta'] .bg-background h3:not(.bg-surface h3),
+[data-theme='terracotta'] .bg-background p:not(.bg-surface p):not(.bg-surface-container p),
+[data-theme='terracotta'] .bg-background .text-on-surface:not(.bg-surface .text-on-surface) {
+  color: #ffffff;
+}
+
+/* Seções mantêm o fundo terracota, mas elementos internos (cards/pills) usam surface branco */
+[data-theme='terracotta'] section.bg-surface {
+  background-color: #C78467;
+}
+
+[data-theme='terracotta'] section.bg-surface h1,
+[data-theme='terracotta'] section.bg-surface h2,
+[data-theme='terracotta'] section.bg-surface p:not(.bg-surface p):not(.bg-surface-container p) {
+  color: #ffffff;
+}
+
+[data-theme='terracotta'] .section-description {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme='terracotta'] .text-on-surface,
+[data-theme='terracotta'] h1,
+[data-theme='terracotta'] h2,
+[data-theme='terracotta'] h3,
+[data-theme='terracotta'] .text-primary {
+  color: #ffffff;
+}
+
+[data-theme='terracotta'] .text-on-surface-variant {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Força texto escuro dentro de QUALQUER elemento de fundo claro no tema terracota */
+[data-theme='terracotta'] [class*="bg-surface"] p,
+[data-theme='terracotta'] [class*="bg-surface"] span,
+[data-theme='terracotta'] [class*="bg-surface"] div,
+[data-theme='terracotta'] [class*="bg-surface"] h1,
+[data-theme='terracotta'] [class*="bg-surface"] h2,
+[data-theme='terracotta'] [class*="bg-surface"] h3,
+[data-theme='terracotta'] [class*="bg-surface"] h4,
+[data-theme='terracotta'] [class*="bg-surface"] .section-description,
+[data-theme='terracotta'] [class*="bg-surface"] .text-on-surface,
+[data-theme='terracotta'] [class*="bg-surface"] .text-on-surface-variant {
+  color: #6b5c4a !important;
+}
+
+[data-theme='terracotta'] [class*="bg-surface"] .section-description {
+  opacity: 0.7;
+}
+
+[data-theme='terracotta'] [class*="bg-surface"] .text-on-surface-variant {
+  opacity: 0.8;
+}
+
+.section-description {
+  color: var(--color-on-surface-variant);
 }
 
 html {
@@ -73,6 +161,31 @@ body {
     background: linear-gradient(135deg, #b8860b 0%, #e6b94d 50%, #fff8dc 100%);
     background-size: 200% 200%;
     animation: gold-shine 5s linear infinite;
+  }
+  
+  .btn-premium {
+    background: linear-gradient(135deg, #b8860b 0%, #e6b94d 50%, #d4a017 100%);
+    background-size: 200% 200%;
+    animation: gold-shine 5s linear infinite;
+    border-radius: 42px 4px 42px 4px;
+    box-shadow: 0 10px 25px -5px rgba(197, 161, 82, 0.25);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(197, 161, 82, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
   }
   
   .text-gold-gradient {

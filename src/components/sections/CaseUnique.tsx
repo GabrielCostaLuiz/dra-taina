@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import Section from "../layout/Section";
 import SectionHeader from "../ui/SectionHeader";
 import { UserCheck, ShieldCheck, Gavel, Eye } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { siteConfig } from "@/constants/config";
 
@@ -11,7 +13,13 @@ export default function CaseUnique() {
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2  lg:gap-24 items-center">
           {/* Image Column */}
-          <div className="relative order-2">
+          <motion.div 
+            className="relative order-2"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             <div className="relative aspect-3/4 md:aspect-4/5 rounded-[40px] overflow-hidden shadow-2xl group">
               <Image
                 src={siteConfig.images.caseUnique}
@@ -25,40 +33,65 @@ export default function CaseUnique() {
             {/* Decorative element */}
             <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -z-10"></div>
             <div className="absolute -top-8 -left-8 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
-          </div>
+          </motion.div>
 
           {/* Text Column */}
           <div className="order-1">
-            <SectionHeader
-              eyebrow="Compromisso"
-              title={<>Atenção personalizada <br /><span className="italic text-secondary font-light">para cada história.</span></>}
-              center={false}
-              className="mb-8!"
-            />
-            <div className="space-y-6 text-on-surface-variant font-body text-lg mb-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <SectionHeader
+                eyebrow="Compromisso"
+                title={<>Atenção personalizada <br /><span className="italic text-secondary font-light">para cada história.</span></>}
+                center={false}
+                className="mb-8!"
+              />
+            </motion.div>
+
+            <motion.div 
+              className="space-y-6 section-description font-body text-lg mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
               <p>
                 Entendemos que por trás de cada processo existe uma vida, uma família e um patrimônio construído com esforço.
               </p>
               <p>
                 Não trabalhamos com soluções genéricas. Nosso foco é identificar a estratégia mais inteligente e humana para o seu caso específico, garantindo que você tenha clareza e segurança em cada decisão.
               </p>
-            </div>
+            </motion.div>
 
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mb-12">
+            <motion.ul 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mb-12"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 1 }}
+            >
               {[
                 { label: "Atendimento Exclusivo", icon: UserCheck },
                 { label: "Sigilo Absoluto", icon: ShieldCheck },
                 { label: "Rigor Técnico", icon: Gavel },
                 { label: "Transparência Total", icon: Eye },
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-on-surface font-body font-medium group">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <item.icon className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm uppercase tracking-wider">{item.label}</span>
-                </li>
+                <motion.li 
+                  key={i} 
+                  className="flex items-center gap-3 text-on-surface font-body font-medium group"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + (i * 0.1) }}
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                  <span className="text-sm uppercase tracking-wider font-bold text-on-surface">{item.label}</span>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
         </div>
       </div>

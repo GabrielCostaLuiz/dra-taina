@@ -4,7 +4,7 @@ export const siteConfig = {
   url: "https://dratainaleocadio.com.br",
   role: "Advocacia Especializada",
   oab: "OAB/SP 474.941",
-  experience: "3+",
+  experience: `${new Date().getFullYear() - 2022}+`,
   casesResolved: "200+", // Valor aproximado baseado em 3 anos, pode ser editado
   email: "taina.leocadio@adv.oabsp.org.br",
   phone: {
@@ -21,7 +21,7 @@ export const siteConfig = {
     hero: "/taina-hero-new.jpeg",
     heroMobile: "/taina-cut.jpeg",
     about: "/taina-olho-lado.jpeg",
-    cta: "/cta-taina.png",
+    cta: "/taina-cta.jpeg",
     caseUnique: "/taina-escritorio.jpeg",
   },
   seo: {

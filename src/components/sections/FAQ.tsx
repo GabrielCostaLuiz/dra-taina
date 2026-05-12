@@ -1,7 +1,9 @@
+"use client";
 import Section from "../layout/Section";
 import FAQItem from "../ui/FAQItem";
 import { GradientSection } from "../ui/GradientSection";
 import SectionHeader from "../ui/SectionHeader";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -22,15 +24,30 @@ export default function FAQ() {
   return (
     <Section id="faq" variant="primary" gradient="bottom" showGrid>
       <div className="max-w-6xl mx-auto px-6">
-        <SectionHeader
-          eyebrow="Dúvidas Frequentes"
-          title={<>Esclarecendo suas <br /><span className="italic text-secondary font-light">Principais Dúvidas</span></>}
-          description="Transparência é um dos nossos pilares. Abaixo, respondemos as questões mais comuns trazidas pelos nossos clientes para garantir total clareza em cada etapa do processo."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <SectionHeader
+            eyebrow="Dúvidas Frequentes"
+            title={<>Esclarecendo suas <br /><span className="italic text-secondary font-light">Principais Dúvidas</span></>}
+            description="Transparência é um dos nossos pilares. Abaixo, respondemos as questões mais comuns trazidas pelos nossos clientes para garantir total clareza em cada etapa do processo."
+          />
+        </motion.div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <FAQItem key={index} {...faq} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+            >
+              <FAQItem {...faq} />
+            </motion.div>
           ))}
         </div>
       </div>

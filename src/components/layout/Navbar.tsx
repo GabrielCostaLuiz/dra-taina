@@ -98,7 +98,7 @@ export function NavbarDesktop() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="font-body text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:text-secondary text-on-surface-variant"
+                className="font-body text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:text-secondary! text-on-surface-variant"
               >
                 {item.name}
               </Link>
@@ -113,7 +113,7 @@ export function NavbarDesktop() {
           isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         } py-0`}
       >
-        <div className="mx-auto max-w-7xl bg-white/95 backdrop-blur-lg rounded-b-4xl shadow-2xl px-10 h-20 flex items-center relative border-x border-b border-outline-variant/10">
+        <div className="mx-auto max-w-7xl bg-surface/95 backdrop-blur-lg rounded-b-4xl shadow-2xl px-10 h-20 flex items-center relative border-x border-b border-outline-variant/10">
           <Link href="/" className="flex items-center z-20 shrink-0">
             <Image
               src={siteConfig.images.logo}

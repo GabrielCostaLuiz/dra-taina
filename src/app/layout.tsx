@@ -5,6 +5,7 @@ import "./globals.css";
 import { siteConfig } from "@/constants/config";
 import Schema from "@/components/seo/Schema";
 import WhatsAppFloating from "@/components/ui/WhatsAppFloating";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -69,6 +70,7 @@ export default function RootLayout({
         <Schema />
         {children}
         <WhatsAppFloating />
+        <ThemeToggle />
       </body>
     </html>
   );

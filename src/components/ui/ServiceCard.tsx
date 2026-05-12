@@ -8,7 +8,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description, icon: Icon }: ServiceCardProps) {
   return (
-    <div className="group bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:bg-white hover:shadow-editorial transition-all duration-500 cursor-default">
+    <div className="group bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/30 hover:bg-surface-container-high hover:shadow-editorial transition-all duration-500 cursor-default">
       <Icon className="text-secondary w-10 h-10 mb-8 group-hover:scale-110 transition-transform" />
       <h3 className="font-display text-2xl mb-4 text-on-surface">{title}</h3>
       <p className="font-body text-base text-on-surface-variant mb-6">{description}</p>
