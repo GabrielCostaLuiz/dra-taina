@@ -1,6 +1,6 @@
 {
-  "name": "Tainá Leocádio",
-  "short_name": "Tainá",
+  "name": "Dra. Tainá",
+  "short_name": "Dra. Tainá",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#D6AA91",
-  "background_color": "#D6AA91",
+  "theme_color": "#bc8c72",
+  "background_color": "#bc8c72",
   "display": "standalone"
 }
