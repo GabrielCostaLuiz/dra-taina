@@ -54,7 +54,7 @@ export default function About() {
           </div>
 
           {/* Pillars of Practice */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
             {[
               { title: "Rigor Técnico", desc: "Precisão absoluta" },
               { title: "Ética", desc: "Transparência total" },
@@ -67,6 +67,25 @@ export default function About() {
             ))}
           </div>
 
+          {/* Section Closure / Mobile CTA */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 pt-10 border-t border-secondary/10 relative">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-px bg-secondary/40"></div>
+              <span className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em]">
+                {siteConfig.oab}
+              </span>
+            </div>
+            
+            <a 
+              href={siteConfig.phone.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 font-body text-xs font-bold text-on-surface hover:text-secondary transition-all uppercase tracking-widest"
+            >
+              Agendar consulta estratégica
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-secondary" />
+            </a>
+          </div>
         </div>
       </div>
     </Section>

@@ -82,10 +82,9 @@ function ProcessMobile() {
             href={siteConfig.phone.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-secondary text-white px-10 py-5 rounded-full font-body text-base font-bold active:scale-95 transition-all shadow-xl"
+            className="inline-flex items-center justify-center bg-secondary text-white px-8 py-5 rounded-full font-body text-base font-bold active:scale-95 transition-all shadow-xl whitespace-nowrap w-full max-w-[280px]"
           >
             Iniciar minha jornada
-            <ArrowRight className="w-5 h-5" />
           </a>
         </div>
       </div>

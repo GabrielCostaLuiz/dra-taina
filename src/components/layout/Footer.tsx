@@ -6,7 +6,7 @@ import { siteConfig } from "@/constants/config";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-surface lg:pt-24 lg:pb-2">
+    <footer id="main-footer" className="relative bg-surface lg:pt-24 lg:pb-2">
       <div className="absolute -top-10 inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.04] -translate-y-2"

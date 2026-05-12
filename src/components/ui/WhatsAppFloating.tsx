@@ -5,6 +5,7 @@ import { siteConfig } from "@/constants/config";
 
 export default function WhatsAppFloating() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -16,9 +17,27 @@ export default function WhatsAppFloating() {
       }
     };
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsFooterVisible(entry.isIntersecting);
+      },
+      { 
+        threshold: 0,
+        rootMargin: "0px 0px 0px 0px" 
+      }
+    );
+
+    const footer = document.getElementById("main-footer");
+    if (footer) observer.observe(footer);
+
     window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+      observer.disconnect();
+    };
   }, []);
+
+  const showButton = isVisible && !isFooterVisible;
 
   return (
     <a
@@ -26,7 +45,7 @@ export default function WhatsAppFloating() {
       target="_blank"
       rel="noopener noreferrer"
       className={`fixed bottom-8 right-8 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl transition-all duration-500 transform ${
-        isVisible 
+        showButton 
           ? "translate-y-0 opacity-100 scale-100" 
           : "translate-y-20 opacity-0 scale-50 pointer-events-none"
       } hover:scale-110 active:scale-95 group`}

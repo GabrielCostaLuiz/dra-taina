@@ -83,7 +83,7 @@ export function HeroTainaMobile() {
                 href={siteConfig.phone.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center px-10 py-5 bg-gold-gradient text-white font-display text-sm uppercase tracking-[0.2em] overflow-hidden rounded-full shadow-2xl transition-all duration-500 hover:scale-105 active:scale-95 w-full"
+                className="group relative inline-flex items-center justify-center px-10 py-5 bg-gold-gradient text-white font-display text-sm uppercase tracking-[0.2em] overflow-hidden rounded-full shadow-2xl transition-all duration-500 hover:scale-105 active:scale-95 w-full whitespace-nowrap"
               >
                 Falar com especialista
               </a>
