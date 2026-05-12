@@ -32,8 +32,8 @@ export function NavbarMobile() {
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 py-3 transition-all duration-500 ${
       isScrolled 
-        ? "bg-surface in-data-[theme='terracotta']:bg-[#D6AA91]/95 backdrop-blur-md shadow-lg" 
-        : "bg-surface in-data-[theme='terracotta']:bg-[#C78467] backdrop-blur-none shadow-none"
+        ? "bg-[#D6AA91]/95 backdrop-blur-md shadow-lg" 
+        : "bg-[#C78467] backdrop-blur-none shadow-none"
     }`}>
       <div className="flex items-center justify-center px-6">
         <Link href="/" className="flex items-center">
@@ -42,7 +42,7 @@ export function NavbarMobile() {
             alt={siteConfig.name}
             width={160}
             height={40}
-            className={`h-11 w-auto object-contain transition-all duration-500 in-data-[theme='terracotta']:brightness-0 in-data-[theme='terracotta']:invert ${!isScrolled ? "in-data-[theme='terracotta']:brightness-0 in-data-[theme='terracotta']:invert" : ""}`}
+            className="h-11 w-auto object-contain transition-all duration-500 brightness-0 invert"
             priority
           />
         </Link>
@@ -97,7 +97,7 @@ export function NavbarDesktop() {
               alt={siteConfig.name}
               width={180}
               height={48}
-              className="h-12 w-auto object-contain transition-all duration-500 in-data-[theme='terracotta']:brightness-0 in-data-[theme='terracotta']:invert"
+              className="h-12 w-auto object-contain transition-all duration-500 brightness-0 invert"
               priority
             />
           </Link>
@@ -112,7 +112,7 @@ export function NavbarDesktop() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="font-body text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:text-secondary! text-on-surface-variant"
+                className="font-body text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:text-secondary text-white/90"
               >
                 {item.name}
               </Link>

@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Section from "../layout/Section";
 import TestimonialCard from "../ui/TestimonialCard";
 import SectionHeader from "../ui/SectionHeader";
@@ -25,9 +26,21 @@ const testimonials = [
     role: "Engenheiro",
     content: "Excelente atuação em questões imobiliárias. Rigor técnico e transparência absoluta em cada etapa do processo.",
   },
+  {
+    name: "Beatriz Almeida",
+    role: "Designer de Interiores",
+    content: "Fiquei impressionada com a dedicação da Dra. Tainá. Ela não apenas resolveu o caso imobiliário complexo, mas me deu total suporte em cada dúvida que tive.",
+  },
+  {
+    name: "Fernando Souza",
+    role: "Investidor",
+    content: "Trabalho jurídico de alto nível. Encontrei na Dra. Tainá a parceria estratégica ideal para meus negócios e proteção patrimonial.",
+  },
 ];
 
 export default function Testimonials() {
+  const [visibleCount, setVisibleCount] = useState(4);
+  const isAllVisible = visibleCount >= testimonials.length;
   return (
     <Section variant="primary" id="testimonials" showGrid>
 
@@ -63,8 +76,8 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Mobile Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:hidden">
-          {testimonials.slice(0, 3).map((testimonial, index) => (
+        <div className="flex flex-col gap-8 lg:hidden">
+          {testimonials.slice(0, visibleCount).map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -75,6 +88,24 @@ export default function Testimonials() {
               <TestimonialCard {...testimonial} />
             </motion.div>
           ))}
+          
+          {!isAllVisible && (
+            <motion.div 
+              className="flex justify-center pt-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <button 
+                onClick={() => setVisibleCount(testimonials.length)}
+                className="group flex flex-col items-center gap-2"
+              >
+                <span className="font-body text-[10px] font-bold text-white uppercase tracking-[0.3em] mb-2">Ver Mais Depoimentos</span>
+                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary transition-all duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+              </button>
+            </motion.div>
+          )}
         </div>
 
         {/* Desktop Infinite Carousel */}

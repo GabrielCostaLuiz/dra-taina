@@ -4,6 +4,7 @@ import HeroTaina from "@/components/sections/HeroTaina";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import About from "@/components/sections/About";
+import Quote from "@/components/sections/Quote";
 import Testimonials from "@/components/sections/Testimonials";
 import CaseUnique from "@/components/sections/CaseUnique";
 import FAQ from "@/components/sections/FAQ";
@@ -17,7 +18,8 @@ export default function Home() {
         <Services />
         <Process />
         <About />
-        <Testimonials />
+        <Quote />
+        {/* <Testimonials /> */}
         <CaseUnique />
         <FAQ />
       </main>

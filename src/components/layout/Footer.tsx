@@ -85,7 +85,7 @@ export default function Footer() {
               </div>
 
               {/* Right side differentials to fill space */}
-              <div className="lg:col-span-5 border-l border-on-surface/10 lg:pl-10 hidden lg:block">
+              <div className="lg:col-span-5 border-l border-white/20 lg:pl-10 hidden lg:block">
                 <p className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-6">Excelência Jurídica</p>
                 <ul className="space-y-6">
                   {[
@@ -124,7 +124,7 @@ export default function Footer() {
                 className="group inline-flex items-center gap-4 text-on-surface! hover:text-secondary! transition-all duration-500"
               >
                 <span className="font-display text-xl md:text-3xl transition-colors">Falar com a Dra. Tainá</span>
-                <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-gold-gradient group-hover:border-transparent group-hover:text-secondary transition-all duration-500 shadow-sm in-data-[theme='terracotta']:shadow-lg ">
+                <div className="w-14 h-14 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-gold-gradient group-hover:border-transparent group-hover:text-secondary transition-all duration-500 shadow-lg ">
                   <ArrowRight className="w-6 h-6" />
                 </div>
               </a>
@@ -132,7 +132,7 @@ export default function Footer() {
 
             {/* Social and availability footer for the card */}
             <motion.div
-              className="mt-16 pt-8 border-t border-on-surface/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10"
+              className="mt-16 pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -141,10 +141,10 @@ export default function Footer() {
               <div className="flex items-center gap-6">
                 <span className="font-body text-[10px] font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Siga-nos</span>
                 <div className="flex gap-4">
-                  <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface-variant! hover:bg-secondary! hover:border-secondary! hover:text-white! transition-all">
+                  <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-on-surface-variant! hover:bg-secondary! hover:border-secondary! hover:text-white! transition-all">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
                   </a>
-                  <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface-variant! hover:bg-secondary! hover:border-secondary! hover:text-white! transition-all">
+                  <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-on-surface-variant! hover:bg-secondary! hover:border-secondary! hover:text-white! transition-all">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
                   </a>
                 </div>
@@ -160,7 +160,7 @@ export default function Footer() {
       </div>
 
       {/* Main White Footer */}
-      <div className="bg-white [theme='terracotta']:bg-surface pt-56 pb-12 relative z-10 rounded-t-4xl lg:rounded-4xl border border-surface lg:w-[99%] mx-auto shadow">
+      <div className="bg-surface pt-56 pb-12 relative z-10 rounded-t-4xl lg:rounded-4xl border border-surface lg:w-[99%] mx-auto shadow">
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-24">
 
@@ -236,7 +236,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="pt-12 border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left relative">
+          <div className="pt-12 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left relative">
             <div className="flex flex-col gap-2">
               <p className="font-body text-[10px] text-on-surface uppercase tracking-widest">
                 © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.
@@ -248,7 +248,7 @@ export default function Footer() {
 
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="absolute -top-16 left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 w-12 h-12 rounded-full bg-surface border border-outline-variant/30 flex items-center justify-center text-[#C78467] hover:bg-secondary in-data-[theme='terracotta']:hover:bg-[#C78467] hover:text-white transition-all duration-500 shadow-sm in-data-[theme='terracotta']:shadow-lg  group"
+              className="absolute -top-16 left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 w-12 h-12 rounded-full bg-surface border border-outline-variant/30 flex items-center justify-center text-[#C78467] hover:bg-[#C78467] hover:text-white transition-all duration-500 shadow-lg group"
               aria-label="Voltar para o topo"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-y-1 transition-transform"><path d="m18 15-6-6-6 6" /></svg>

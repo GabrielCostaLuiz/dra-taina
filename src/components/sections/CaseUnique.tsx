@@ -89,7 +89,7 @@ export default function CaseUnique() {
                   transition={{ delay: 0.5 + (i * 0.1) }}
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
-                  <span className="text-sm uppercase tracking-wider font-bold text-on-surface">{item.label}</span>
+                  <span className="text-sm uppercase tracking-wider font-bold section-description">{item.label}</span>
                 </motion.li>
               ))}
             </motion.ul>

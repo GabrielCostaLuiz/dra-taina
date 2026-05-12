@@ -129,7 +129,7 @@ export default function Services() {
                 onClick={() => setActivePillarId(pillar.id)}
                 className={`relative px-10 py-4 rounded-full font-body text-sm font-bold transition-all duration-300 border ${activePillarId === pillar.id
                   ? "text-white border-transparent shadow-xl"
-                  : "bg-surface-variant/50 text-[#6b5c4a] border-outline-variant/30 hover:bg-surface-variant/80 group-data-[theme='terracotta']:bg-white/10 group-data-[theme='terracotta']:text-white/60 group-data-[theme='terracotta']:border-white/10 group-data-[theme='terracotta']:hover:bg-white/20"
+                  : "bg-surface-variant/50 text-[#6b5c4a] border-outline-variant/30 hover:bg-surface-variant/80"
                   }`}
                 variants={{
                   initial: { opacity: 0, y: 10 },
@@ -169,7 +169,7 @@ export default function Services() {
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="inline-flex lg:flex-row-reverse items-center gap-6 mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-sm in-data-[theme='terracotta']:shadow-lg  transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
+                      <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-lg transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
                         <item.icon className="w-6 h-6" />
                       </div>
                       <h3 className="font-display text-2xl text-on-surface group-hover:text-secondary transition-colors">
@@ -217,7 +217,7 @@ export default function Services() {
                     transition={{ delay: (index + 2) * 0.1 }}
                   >
                     <div className="flex items-center gap-6 mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-sm in-data-[theme='terracotta']:shadow-lg  transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
+                      <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/30 flex items-center justify-center text-secondary shadow-lg transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:-translate-y-1">
                         <item.icon className="w-6 h-6" />
                       </div>
                       <h3 className="font-display text-2xl text-on-surface group-hover:text-secondary transition-colors">
@@ -247,31 +247,41 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Mobile View: Vertical Accordion Layout */}
-        <div className="lg:hidden space-y-6">
+        {/* Mobile View: Editorial Glass Cards */}
+        <div className="lg:hidden space-y-8">
           {servicePillars.map((pillar, pillarIdx) => (
             <motion.div
               key={pillar.id}
-              className={`bg-surface in-data-[theme='terracotta']:bg-white/95 rounded-3xl border transition-all duration-500 overflow-hidden ${activePillar.id === pillar.id ? "border-secondary/30 shadow-xl" : "border-outline-variant/20!"
-                }`}
+              className={`relative rounded-[32px] transition-all duration-500 overflow-hidden border ${activePillarId === pillar.id ? "bg-white/35 border-white/50 shadow-2xl scale-[1.02]" : "bg-white/15 border-white/20"
+                } backdrop-blur-xl`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: pillarIdx * 0.1 }}
             >
+              {/* Number Background Decor */}
+              <span className="absolute -top-4 -right-2 font-display text-8xl font-black text-white/5 select-none pointer-events-none">
+                0{pillarIdx + 1}
+              </span>
+
               <button
                 onClick={() => setActivePillarId(activePillarId === pillar.id ? null : pillar.id)}
-                className="w-full flex items-center justify-between p-6 text-left bg-white group-data-[theme='terracotta']:bg-white/5 transition-colors"
+                className="w-full flex items-center justify-between p-8 text-left transition-colors relative z-10"
               >
-                <div className="flex items-center gap-4">
-                  <div className={`shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 ${activePillarId === pillar.id ? 'bg-gold-gradient text-white! shadow-lg shadow-secondary/20' : 'bg-white border border-secondary/20 text-secondary! group-data-[theme="terracotta"]:bg-white/10 '}`}>
+                <div className="flex items-center gap-5">
+                  <div className={`shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${activePillarId === pillar.id ? 'bg-gold-gradient text-white shadow-lg' : 'bg-white/10 border border-white/20 text-white'}`}>
                     <pillar.icon className="w-6 h-6" />
                   </div>
-                  <span className={`font-display text-xl transition-colors ${activePillarId === pillar.id ? "text-secondary!" : "text-[#6b5c4a] group-data-[theme='terracotta']:text-white/60"}`}>
-                    {pillar.fullName}
-                  </span>
+                  <div>
+                    <p className="font-body text-[10px] uppercase tracking-[0.3em] text-secondary font-bold mb-1">Especialidade 0{pillarIdx + 1}</p>
+                    <h3 className={`font-display text-2xl transition-colors ${activePillarId === pillar.id ? "text-white" : "text-white/90"}`}>
+                      {pillar.fullName}
+                    </h3>
+                  </div>
                 </div>
-                <div></div>
+                <div className={`transition-transform duration-500 ${activePillarId === pillar.id ? "rotate-180" : ""}`}>
+                  <ChevronDown className={`w-6 h-6 ${activePillarId === pillar.id ? "text-secondary" : "text-white/30"}`} />
+                </div>
               </button>
 
               <AnimatePresence>
@@ -280,31 +290,37 @@ export default function Services() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-8 space-y-10 border-t border-outline-variant/10 pt-8">
-                      {pillar.items.map((item, idx) => (
-                        <div key={idx} className="space-y-3">
-                          <div className="flex items-center gap-4">
-                            <div className="w-2 h-2 rounded-full bg-secondary"></div>
-                            <h4 className="font-display text-lg text-on-surface">{item.title}</h4>
+                    <div className="px-8 pb-10 pt-4 relative z-10">
+                      <div className="h-px bg-white/20 w-full mb-8"></div>
+                      
+                      <div className="grid gap-8">
+                        {pillar.items.map((item, idx) => (
+                          <div key={idx} className="group">
+                            <div className="flex items-start gap-4">
+                              <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></div>
+                              <div>
+                                <h4 className="font-display text-lg text-white mb-2">{item.title}</h4>
+                                <p className="font-body text-sm text-white/70 leading-relaxed">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </div>
                           </div>
-                          <p className="font-body text-sm section-description leading-relaxed pl-6">
-                            {item.description}
-                          </p>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
 
-                      <div className="pt-4">
+                      <div className="pt-10">
                         <a
                           href={`https://wa.me/5511940044592?text=${encodeURIComponent(pillar.whatsappMessage)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn-premium py-4 px-6 text-xs w-full text-center"
+                          className="btn-premium py-5 px-8 text-xs w-full text-center flex items-center justify-center gap-3"
                         >
-                          Saber mais sobre {pillar.title}
-
+                          Consultar Especialista
+                          <ArrowRight className="w-4 h-4" />
                         </a>
                       </div>
                     </div>

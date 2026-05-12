@@ -103,7 +103,7 @@ function ProcessMobile() {
             href={siteConfig.phone.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-premium px-8 py-5 text-base w-full max-w-[280px] text-center"
+            className="btn-premium px-8 py-5 text-sm w-full max-w-[280px] text-center"
           >
             iniciar atendimento
           </a>

@@ -82,7 +82,7 @@ export default function About() {
           >
             <p>
               Acredito que a advocacia vai além das leis; trata-se de pessoas e seus futuros.
-              Como advogada inscrita na <span className="text-primary font-medium">{siteConfig.oab}</span>, busco oferecer segurança jurídica com um atendimento próximo e estratégico.
+              Como advogada inscrita na <span className="text-secondary font-medium">{siteConfig.oab}</span>, busco oferecer segurança jurídica com um atendimento próximo e estratégico.
             </p>
             <p>
               Com atuação focada nas áreas <strong>Cível, Família, Sucessões e Imobiliário</strong>, meu compromisso é conduzir cada caso com o máximo rigor técnico, garantindo que os direitos e o patrimônio dos meus clientes sejam preservados.
@@ -104,27 +104,27 @@ export default function About() {
             ].map((pilar) => (
               <motion.div 
                 key={pilar.title} 
-                className="border-l border-secondary/30 pl-4"
+                className="border-l-2 border-secondary pl-6 py-1"
                 variants={{
                   initial: { opacity: 0, x: -10 },
                   whileInView: { opacity: 1, x: 0 }
                 }}
               >
-                <p className="font-display text-lg text-secondary leading-none mb-1">{pilar.title}</p>
-                <p className="font-body text-[10px] section-description uppercase tracking-wider">{pilar.desc}</p>
+                <p className="font-display text-xl text-secondary leading-none mb-2">{pilar.title}</p>
+                <p className="font-body text-[11px] text-white/80 uppercase tracking-[0.2em] font-bold">{pilar.desc}</p>
               </motion.div>
             ))}
           </motion.div>
 
           {/* Section Closure / Mobile CTA */}
           <motion.div 
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-8 pt-10 border-t border-secondary/10 relative"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-8 pt-10 border-t border-white/20 relative"
             {...fadeInUp as any}
             transition={{ ...fadeInUp.transition, delay: 0.4 } as any}
           >
             <div className="flex items-center gap-3">
-              <div className="w-8 h-px bg-secondary/40"></div>
-              <span className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em]">
+              <div className="w-12 h-px bg-secondary/40"></div>
+              <span className="font-body text-xs font-bold text-white uppercase tracking-[0.3em]">
                 {siteConfig.oab}
               </span>
             </div>
@@ -133,10 +133,13 @@ export default function About() {
               href={siteConfig.phone.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 font-body text-xs font-bold text-on-surface hover:text-secondary transition-all uppercase tracking-widest"
+              className="group flex items-center gap-3 font-body text-sm font-bold text-white hover:text-secondary transition-all uppercase tracking-[0.2em] relative py-2"
             >
-              Agendar consulta estratégica
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-secondary" />
+              Agendar atendimento estratégico
+              <div className="p-2 rounded-full bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-secondary" />
+              </div>
+              <div className="absolute bottom-0 left-0 w-0 h-px bg-secondary transition-all duration-500 group-hover:w-full"></div>
             </a>
           </motion.div>
         </div>

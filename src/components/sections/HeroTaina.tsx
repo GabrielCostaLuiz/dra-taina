@@ -19,7 +19,7 @@ export default function HeroTaina() {
 
 export function HeroTainaMobile() {
   return (
-    <section className="relative min-h-screen bg-background flex flex-col pt-24 overflow-hidden">
+    <section className="relative min-h-screen bg-background flex flex-col pt-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
         style={{ backgroundImage: `linear-gradient(to right, #c5a059 1px, transparent 1px), linear-gradient(to bottom, #c5a059 1px, transparent 1px)`, backgroundSize: '40px 40px' }}>
@@ -41,33 +41,8 @@ export function HeroTainaMobile() {
             priority
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent"></div>
-
-          {/* Identity Floating Label */}
-          <motion.div
-            className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-4"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <p className="font-display text-white text-lg font-light leading-tight">
-              {siteConfig.name}
-            </p>
-            <p className="font-body text-white/70 text-[9px] uppercase tracking-widest mt-1">
-              Cível · Família · Sucessões · Imobiliário
-            </p>
-          </motion.div>
+        
         </div>
-
-        {/* Rating Badge / OAB */}
-        <motion.div
-          className="absolute -top-4 right-10 bg-surface px-4 py-2 rounded-xl shadow-xl z-20 border border-outline-variant/20"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-        >
-          <p className="font-body text-[7px] font-bold text-secondary uppercase tracking-[0.1em] mb-0.5">Registro Ativo</p>
-          <p className="font-display text-[10px] font-bold text-on-surface uppercase tracking-wider">{siteConfig.oab}</p>
-        </motion.div>
       </motion.div>
 
       {/* Content Section */}
@@ -97,16 +72,16 @@ export function HeroTainaMobile() {
         </motion.h1>
 
         {/* Areas */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10 w-full">
+        <div className="flex flex-wrap justify-center gap-2 mb-8 w-full max-w-[320px] mx-auto">
           {["Cível", "Família", "Sucessões", "Imobiliário"].map((area, idx) => (
             <motion.div
               key={area}
-              className="px-5 py-2.5 rounded-full bg-surface border border-outline-variant/20 shadow-sm in-data-[theme='terracotta']:shadow-lg   flex items-center justify-center min-w-[100px]"
+              className="px-4 py-2 rounded-full bg-white/80 backdrop-blur-xl border border-white/20 shadow-xl flex items-center justify-center grow basis-[40%]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.3 + (idx * 0.1), duration: 0.5 }}
             >
-              <span className="font-body text-[9px] font-bold text-secondary! uppercase tracking-[0.2em] whitespace-nowrap">{area}</span>
+              <span className="font-body text-[8px] font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">{area}</span>
             </motion.div>
           ))}
         </div>
@@ -129,27 +104,27 @@ export function HeroTainaMobile() {
 
           {/* New 4-info Grid */}
           <motion.div
-            className="bg-surface rounded-3xl border border-outline-variant/20 overflow-hidden shadow-sm in-data-[theme='terracotta']:shadow-lg "
+            className="bg-white/80 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden shadow-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.9, duration: 0.8 }}
           >
             <div className="grid grid-cols-2">
-              <div className="p-5 border-b border-r border-secondary/20">
-                <p className="font-display text-xl font-bold text-secondary! leading-none">{siteConfig.experience} Anos</p>
-                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Experiência</p>
+              <div className="p-5 border-b border-r border-secondary/10">
+                <p className="font-display text-xl font-bold text-secondary leading-none">{siteConfig.experience} Anos</p>
+                <p className="font-body text-[9px] uppercase tracking-wider text-primary mt-1.5 font-bold">Experiência</p>
               </div>
-              <div className="p-5 border-b border-secondary/20">
-                <p className="font-display text-xl font-bold text-secondary! leading-none">100+</p>
-                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Casos Atendidos</p>
+              <div className="p-5 border-b border-secondary/10">
+                <p className="font-display text-xl font-bold text-secondary leading-none">100+</p>
+                <p className="font-body text-[9px] uppercase tracking-wider text-primary mt-1.5 font-bold">Casos Atendidos</p>
               </div>
-              <div className="p-5 border-r border-secondary/20">
-                <p className="font-display text-xl font-bold text-secondary! leading-none">Ativa</p>
-                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">OAB/SP Registro</p>
+              <div className="p-5 border-r border-secondary/10">
+                <p className="font-display text-xl font-bold text-secondary leading-none">Ativa</p>
+                <p className="font-body text-[9px] uppercase tracking-wider text-primary mt-1.5 font-bold">OAB/SP Registro</p>
               </div>
               <div className="p-5">
-                <p className="font-display text-xl font-bold text-secondary! leading-none">Híbrido</p>
-                <p className="font-body text-[9px] uppercase tracking-wider text-on-surface-variant mt-1.5 font-bold">Atendimento</p>
+                <p className="font-display text-xl font-bold text-secondary leading-none">Híbrido</p>
+                <p className="font-body text-[9px] uppercase tracking-wider text-primary mt-1.5 font-bold">Atendimento</p>
               </div>
             </div>
           </motion.div>
@@ -205,12 +180,12 @@ export function HeroTainaDesktop() {
               {["Cível", "Família", "Sucessões", "Imobiliário"].map((area, idx) => (
                 <motion.div
                   key={area}
-                  className="px-6 py-2.5 rounded-full bg-surface border border-outline-variant/20 shadow-sm in-data-[theme='terracotta']:shadow-lg   hover:shadow-md hover:border-secondary/30 transition-all duration-300 group cursor-default flex items-center justify-center"
+                  className="px-6 py-2.5 rounded-full bg-white/80 backdrop-blur-xl border border-secondary/20 shadow-sm hover:shadow-md hover:border-secondary/50 transition-all duration-300 group cursor-default flex items-center justify-center"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + (idx * 0.1), duration: 0.5 }}
                 >
-                  <span className="font-body text-[10px] font-bold text-secondary uppercase tracking-[0.2em] group-hover:tracking-[0.25em] transition-all duration-300">{area}</span>
+                  <span className="font-body text-[10px] font-bold text-primary uppercase tracking-[0.2em] group-hover:tracking-[0.25em] transition-all duration-300">{area}</span>
                 </motion.div>
               ))}
             </div>
@@ -241,7 +216,7 @@ export function HeroTainaDesktop() {
 
               <div className="flex flex-col">
                 <span className="font-display text-2xl font-semibold text-secondary leading-none">{siteConfig.experience} Anos</span>
-                <span className="font-body text-[10px] uppercase tracking-wider text-on-surface-variant mt-1">de experiência</span>
+                <span className="font-body text-[10px] uppercase tracking-wider text-white mt-1">de experiência</span>
               </div>
             </motion.div>
           </div>

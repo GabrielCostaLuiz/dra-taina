@@ -1,6 +1,6 @@
-"use client";
-
+import { useState } from "react";
 import { Plus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface FAQItemProps {
   question: string;
@@ -8,33 +8,55 @@ interface FAQItemProps {
 }
 
 export default function FAQItem({ question, answer }: FAQItemProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="group bg-surface-container rounded-3xl border border-secondary/20 overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-secondary/40">
-      {/* Desktop Version: Details/Accordion */}
-      <details className="hidden md:block group/details" open={false}>
-        <summary className="flex justify-between items-center p-8 cursor-pointer list-none">
-          <h3 className="font-display text-xl lg:text-2xl text-on-surface group-hover/details:text-secondary transition-colors pr-8">
+    <div className="group/faq bg-white/80 backdrop-blur-xl rounded-[32px] border border-secondary/30 overflow-hidden transition-all duration-500 hover:shadow-lg hover:border-secondary/40">
+      {/* Desktop Version: Custom Accordion */}
+      <div className="hidden md:block">
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full flex justify-between items-center p-8 cursor-pointer text-left"
+        >
+          <h3 className="font-display text-xl lg:text-2xl text-primary! transition-colors pr-8 group-hover/faq:translate-x-1 duration-300">
             {question}
           </h3>
-          <div className="shrink-0 w-10 h-10 rounded-full bg-white border border-secondary/40 flex items-center justify-center text-secondary transition-all duration-500 group-open/details:rotate-45 group-open/details:bg-secondary group-open/details:text-white! group-data-[theme='terracotta']:group-open/details:bg-white group-data-[theme='terracotta']:group-open/details:text-secondary">
-            <Plus className="w-5 h-5" />
+          <div className={`shrink-0 w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-500 ${
+            isOpen 
+              ? "rotate-45 bg-secondary text-white border-transparent" 
+              : "bg-secondary/15 border-secondary/40 text-secondary group-hover/faq:bg-secondary group-hover/faq:text-white"
+          }`}>
+            <Plus className="w-6 h-6" />
           </div>
-        </summary>
-        <div className="px-8 pb-10">
-          <div className="h-px bg-secondary/20 mb-8"></div>
-          <p className="font-body text-lg text-on-surface-variant leading-relaxed font-medium">
-            {answer}
-          </p>
-        </div>
-      </details>
+        </button>
+        
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
+              className="overflow-hidden bg-white/10"
+            >
+              <div className="px-8 pb-10">
+                <div className="h-px bg-secondary/30 mb-8"></div>
+                <p className="font-body text-lg text-primary leading-relaxed font-medium">
+                  {answer}
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
-      {/* Mobile Version: Always Open Card */}
-      <div className="md:hidden p-7">
-        <h3 className="font-display text-xl text-on-surface! mb-4 leading-tight">
+      {/* Mobile Version: Always Open Card (or also accordion if you prefer) */}
+      <div className="md:hidden p-8">
+        <h3 className="font-display text-xl text-primary! mb-4 leading-tight">
           {question}
         </h3>
-        <div className="h-px bg-secondary/20 mb-4"></div>
-        <p className="font-body text-base text-on-surface-variant! leading-relaxed font-medium">
+        <div className="h-px bg-secondary/30 mb-5"></div>
+        <p className="font-body text-base text-primary/80 leading-relaxed font-medium">
           {answer}
         </p>
       </div>
