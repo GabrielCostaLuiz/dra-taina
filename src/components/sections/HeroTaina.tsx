@@ -206,8 +206,8 @@ export function HeroTainaDesktop() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-l-[10rem] lg:rounded-l-[20rem] z-[1] pointer-events-none" />
 
           {/* Anéis concêntricos no canto superior esquerdo */}
-          <div className="absolute top-8 left-8 w-[340px] h-[340px] rounded-full border border-secondary/20 z-10 pointer-events-none" />
-          <div className="absolute top-8 left-8 w-[220px] h-[220px] rounded-full border border-secondary/25 z-10 pointer-events-none" />
+          <div className="absolute top-8 left-0 w-[240px] h-[240px] rounded-full border border-secondary/20 z-10 pointer-events-none" />
+          <div className="absolute top-8 left-0 w-[120px] h-[120px] rounded-full border border-secondary/25 z-10 pointer-events-none" />
 
           {/* Grid de pontos — movido para o canto esquerdo da imagem para equilíbrio */}
           <div className="absolute bottom-[130px] left-12 z-10 grid pointer-events-none"
