@@ -255,12 +255,12 @@ export default function Footer() {
             </button>
 
             <a
-              href="https://gabrielcostaluiz.com.br"
+              href="https://studio.gabrielcostaluiz.com.br"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body text-[9px] text-on-surface uppercase tracking-[0.2em] hover:text-secondary transition-colors"
             >
-              Desenvolvido por <span className="font-bold text-black">Gabriel Costa Luiz</span>
+              Desenvolvido por <span className="font-bold text-black">GCL Studio</span>
             </a>
           </div>
         </div>
